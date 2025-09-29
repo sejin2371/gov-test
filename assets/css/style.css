@@ -1204,6 +1204,7 @@ strong.b {
   align-items: initial;
   gap: 0.5rem;
   padding: 12px 0;
+  background-color: red;
 }
 
 .top-control-box {
