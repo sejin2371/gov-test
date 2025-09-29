@@ -1,0 +1,25 @@
+@use '../util/' as *;
+
+.layout-inner {
+    max-width: var(--contents-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 rem(24);
+}
+
+// res
+.res-pc-hide {
+    @include pc {
+        display: none !important;
+    }
+}
+.res-tablet-hide {
+    @include tablet {
+        display: none !important;
+    }
+}
+.res-device-hide {
+    @include device {
+        display: none !important;
+    }
+}

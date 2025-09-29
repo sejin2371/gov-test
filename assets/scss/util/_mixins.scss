@@ -1,0 +1,88 @@
+@use './variable' as *;
+@use 'sass:list';
+
+@mixin flex($direction: row, $x: initial, $y: initial) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $x;
+    align-items: $y;
+    @content;
+}
+@mixin flexColumn {
+    @include flex($direction: column);
+    @content;
+}
+@mixin flexBetween {
+    @include flex($x: space-between, $y: center);
+    @content;
+}
+@mixin flexYCenter {
+    @include flex($x: flex-start, $y: center);
+    @content;
+}
+@mixin flexCenter {
+    @include flex($x: center, $y: center);
+    @content;
+}
+
+@mixin bgi($img, $bgp: 0 0, $size: contain) {
+    background-repeat: no-repeat;
+    background-size: $size;
+    background-position: $bgp;
+    background-image: url($imgurl + $img);
+}
+
+@mixin mask($img, $bgp: 0 0, $size: contain) {
+    mask-repeat: no-repeat;
+    mask-size: $size;
+    mask-image: url($imgurl + $img);
+    mask-position: $bgp;
+}
+
+// ellipsis
+@mixin ellipsis($line: 1) {
+    @if ($line == 1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+    word-break: break-all;
+}
+
+@mixin pc {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin device {
+    @media (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 601px) and (max-width: 1023px) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+$rootFontSize: 16;
+@function rem($values) {
+    $result: ();
+    @each $value in $values {
+        $result: list.append($result, calc($value / $rootFontSize * 1rem));
+    }
+    @return $result;
+}

@@ -1,0 +1,65 @@
+@use '../util/' as *;
+
+.ui-icon-txt {
+    @include flexColumn {
+        align-items: center;
+        gap: 8px;
+    }
+
+    padding: rem(4) rem(12);
+}
+
+.ui-list-item {
+    @include flexYCenter {
+        gap: rem(8);
+    }
+    font-weight: 700;
+    padding: rem(4) rem(16) 0;
+    height: 100%;
+
+    i {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.ui-btn-detail {
+    @include flexYCenter;
+    display: inline-flex;
+
+    height: 64px;
+
+    font-size: rem(19);
+    padding: 0 rem(24);
+    background-color: #246beb;
+    border-radius: 8px;
+    color: #fff !important;
+}
+
+.ui-title-wrap {
+    @include flexBetween {
+        gap: rem(8);
+    }
+
+    .ui-title-txt {
+        font-size: rem(32);
+        font-weight: 700;
+    }
+
+    [class*='ui-btn-'] {
+        @include flexYCenter {
+            gap: rem(4);
+
+            i {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+.swiper-pagination-bullet-active {
+    width: rem(20);
+    border-radius: rem(140);
+    background-color: #246beb;
+}

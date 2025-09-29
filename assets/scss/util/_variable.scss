@@ -1,0 +1,58 @@
+// scss 변수
+$imgurl: '/assets/images/';
+
+$contents-width: 1328px;
+
+$primary: #0b50d0;
+$purple: #c875c4;
+$green: #77ae4c;
+$white: #fff;
+$gray: #f4f5f6;
+$gray-subtle: #e6e8ea;
+
+$secondary-subtler: #eef2f7;
+
+$colors: (
+    'primary': $primary,
+    'purple': $purple,
+    'green': $green,
+    'white': $white,
+    'gray': $gray,
+    'gray-subtle': $gray-subtle,
+    'secondary-subtler': $secondary-subtler,
+);
+
+// background / txt color
+@each $semantic, $color in $colors {
+    .bgc-#{$semantic} {
+        background-color: $color;
+    }
+    .txt-#{$semantic} {
+        color: $color;
+    }
+}
+
+$fontSize: (
+    'sizeS': 10px,
+    'sizeM': 14px,
+    'sizeR': 16px,
+    'sizeL': 18px,
+);
+
+// font-size
+@each $semantic, $size in $fontSize {
+    .#{$semantic} {
+        font-size: $size;
+    }
+}
+
+:root {
+    // css 변수
+    --contents-width: #{$contents-width};
+
+    // color
+    --default-color: #1d1d1d;
+
+    // bgc
+    --secondary-subtler: #{$secondary-subtler};
+}

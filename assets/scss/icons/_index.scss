@@ -1,0 +1,63 @@
+@use '../util/' as *;
+
+$iconsList: 'accessibility', 'analytics', 'annotation', 'arrow-down', 'value',
+    'globe', 'view-mode', 'korea-republic', 'search', 'login', 'join',
+    'emergency', 'arrow-right', 'arrow-left', 'setting', 'btn-shortcut',
+    'btn-more', 'instagram', 'youtube', 'X_twitter', 'facebook', 'naver_blog',
+    'house', 'calendar', 'new_folder', 'map', 'identity', 'location_away',
+    'bookmarks', 'ecg_heart', 'vector', 'menu', 'truk1', 'Victory', 'item-blue',
+    'stop', 'ico_go_20', 'head_ico_navi_my', 'head_ico_navi_join',
+    'head_ico_navi_login', 'head_ico_navi_sch', 'head_gnb_ico_arr',
+    'head_ico_navi_all';
+
+[class*='icons-'] {
+    transition: background-color 0.3s;
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+
+    &.rotate {
+        transform: rotate(180deg);
+    }
+    &.small {
+        width: 10px;
+        height: 10px;
+    }
+    &.large {
+        width: 26px;
+        height: 26px;
+    }
+
+    &.icons {
+        @each $item in $iconsList {
+            &-#{$item} {
+                &:not(.bgi) {
+                    @include mask('icons/#{$item}.svg');
+
+                    &:not([class*='bgc-']) {
+                        background-color: #1d1d1d;
+                    }
+                }
+
+                &.auto {
+                    -webkit-mask-size: auto;
+                    mask-size: 100% 100%;
+                }
+
+                &.bgi {
+                    @include bgi('icons/#{$item}.svg');
+                }
+            }
+        }
+
+        // icons size
+        &-annotation {
+            width: 64px;
+            height: 64px;
+        }
+    }
+    &.white:not([class*='bgc-']) {
+        color: var(--white);
+        background-color: var(--white) !important;
+    }
+}

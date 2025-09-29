@@ -1,0 +1,23 @@
+/* util */
+@use './util/' as *;
+
+/* reset */
+@use './reset';
+
+/* icons */
+@use './icons/' as icons;
+
+/* common */
+@use './common/' as *;
+
+/* components */
+@use './components';
+
+/* layout */
+@use './layout';
+
+/* lib */
+@use './lib';
+
+/* page */
+@use './page';
