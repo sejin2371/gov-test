@@ -1,6 +1,7 @@
 @use '../util/' as *;
 .com-main-wrap {
     // 자주찾는 메뉴
+
     .main-favorit-wrap {
         .layout-inner {
             @include flexColumn;
@@ -22,8 +23,6 @@
         .favorit-pagination {
             @include flexCenter;
             height: rem(40);
-        }
-        .swiper-wrapper {
         }
 
         .favorit-card-wrap {
@@ -77,4 +76,306 @@
         }
     }
     // 자주찾는 메뉴 //
+    // 복합 컨텐츠
+    .main-composite-wrap {
+        .layout-inner {
+            @include flexColumn {
+                gap: rem(40);
+                margin-top: rem(80);
+            }
+        }
+        .composite-card-wrap {
+            @include flex {
+                gap: rem(24);
+            }
+        }
+        .composite-card-main {
+            @include flexColumn {
+                justify-content: space-between;
+            }
+            border-radius: rem(12);
+            width: rem(302);
+            height: rem(476);
+            padding: rem(40);
+            flex-shrink: 0;
+
+            .ui-card-title {
+                font-size: rem(25);
+            }
+        }
+
+        // composite-swiper
+        .composite-swiper-wrap {
+            position: relative;
+            width: 60%;
+            padding: 0 rem(72);
+            flex-grow: 1;
+            .swiper-slide {
+                width: 30%;
+            }
+            .composite-swiper {
+                @include flexColumn;
+                gap: rem(40);
+            }
+
+            .ui-img-box {
+                border-radius: rem(12);
+                height: rem(196);
+            }
+            .composite-pagination {
+                @include flexCenter;
+                height: rem(40);
+            }
+        }
+
+        .composite-card {
+            @include flexColumn {
+                gap: rem(40);
+            }
+        }
+        .composite-button-next,
+        .composite-button-prev {
+            @include flexCenter;
+            position: absolute;
+            top: 38%;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e4e4e4;
+            border-radius: 100%;
+            z-index: 10;
+
+            i {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        .composite-button-next {
+            right: 0px;
+        }
+        .composite-button-prev {
+            left: 0px;
+        }
+    }
+    // 복합 컨텐츠 //
+    // 정책 소개
+    .main-policy-wrap {
+        margin-top: rem(80);
+
+        .layout-inner {
+            @include flexColumn;
+            gap: rem(40);
+        }
+
+        .policy-card-box {
+            flex-grow: 1;
+            width: 30%;
+            border: 1px solid #c6c6c6;
+            border-radius: 12px;
+        }
+        .thumb {
+            @include flexCenter;
+            height: rem(196);
+            background-color: #dfe8f4;
+            border-radius: 12px 12px 0 0;
+        }
+        .policy-card-txt {
+            @include flexColumn;
+            gap: rem(24);
+            padding: rem(24);
+
+            .ui-btn-detail {
+                margin-left: auto;
+            }
+        }
+    }
+    // 정책 소개 //
+    // 뉴스
+    .main-news-wrap {
+        .layout-inner {
+            @include flexColumn {
+                gap: rem(40);
+                margin-top: rem(80);
+            }
+        }
+        .news-snb-wrap {
+            @include flexYCenter;
+
+            .ui-btn-more {
+                margin-left: auto;
+            }
+        }
+        .news-snb {
+            @include flexYCenter;
+            gap: rem(8);
+
+            li {
+                @include flexCenter;
+                color: #555555;
+                height: rem(48);
+                margin-left: rem(16);
+                font-weight: 700;
+            }
+            button {
+                height: 100%;
+                padding: 0 rem(2);
+
+                &:focus {
+                    color: #003675;
+                    border-bottom: 3px solid #003675;
+                    background-color: #edf1f5;
+                    // text-decoration: underline;
+                    // text-decoration-color: #003675; /* 밑줄 색상 */
+                    // text-decoration-thickness: 3px;
+                    // text-underline-offset: 8px;
+                    border-radius: 6px 6px 0 0;
+                    transition: 0.3s ease-in-out;
+                }
+            }
+        }
+
+        .news-cont-wrap {
+            @include flexColumn {
+                gap: rem(40);
+            }
+        }
+        .ui-card-wrap {
+            flex-wrap: wrap;
+        }
+        .news-card-box {
+            @include flex {
+                gap: rem(40);
+                flex-grow: 1;
+            }
+            width: 40%;
+            padding: rem(32);
+            border: 1px solid #c6c6c6;
+            border-radius: rem(12);
+
+            .ui-card-title {
+                @include ellipsis(1);
+            }
+
+            .ui-img-box {
+                display: block;
+                flex-shrink: 0;
+                width: 100%;
+                min-width: rem(100);
+                max-width: rem(200);
+                height: 100%;
+                img {
+                    min-width: rem(100);
+                    max-width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .news-card-txt {
+                @include flexColumn {
+                    gap: rem(24);
+                }
+                min-width: 0;
+            }
+        }
+    }
+}
+
+// 반응형pc
+@include device {
+    .ui-title-wrap {
+        .ui-title-txt {
+            font-size: rem(25);
+        }
+    }
+    .main-policy-wrap {
+        .ui-card-wrap {
+            flex-wrap: wrap;
+        }
+        .policy-card-box {
+            width: 40% !important;
+        }
+    }
+}
+
+@include mobile {
+    .page-main-wrap {
+        .favorit-button-next,
+        .favorit-button-prev,
+        .favorit-pagination {
+            display: none !important;
+        }
+
+        .main-banner-swiper-next,
+        .main-banner-swiper-prev {
+            display: none !important;
+        }
+        .main-banner-wrap {
+            padding: rem(64) 0;
+        }
+        .main-banner-wrap {
+            .banner-slide-item {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-grow: 1;
+                gap: rem(24);
+            }
+            .swiper-slide {
+                justify-content: flex-start;
+                padding: 0 rem(24);
+            }
+            .banner-txt-box {
+                gap: rem(32);
+            }
+            .banner-img {
+                margin: 0 auto;
+                img {
+                    max-width: 340px;
+                    max-height: 160px;
+                }
+            }
+            .banner-swiper-indicator {
+                margin-top: rem(24);
+            }
+        }
+        .main-favorit-wrap {
+            .favorit-swiper-wrap {
+                padding: 0;
+            }
+
+            .swiper-wrapper {
+                @include flexYCenter {
+                    gap: rem(16);
+                    flex-wrap: wrap;
+                }
+                .swiper-slide {
+                    width: 40% !important;
+                    flex-grow: 1;
+                }
+            }
+        }
+        .composite-card-wrap {
+            flex-direction: column !important;
+
+            .composite-card-main {
+                display: flex;
+                height: auto;
+                width: 100%;
+
+                img {
+                    margin-top: auto;
+                    max-width: 222px;
+                    max-height: 117px;
+                }
+            }
+        }
+        .composite-swiper-wrap {
+            width: 100% !important;
+        }
+        // 뉴스
+        .main-news-wrap {
+            .news-card-box {
+                width: 90%;
+            }
+        }
+    }
 }

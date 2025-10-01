@@ -13,13 +13,18 @@
         display: none !important;
     }
 }
+.res-device-hide {
+    @include device {
+        display: none !important;
+    }
+}
 .res-tablet-hide {
     @include tablet {
         display: none !important;
     }
 }
-.res-device-hide {
-    @include device {
+.res-mobile-hide {
+    @include mobile {
         display: none !important;
     }
 }

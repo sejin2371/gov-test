@@ -13,177 +13,176 @@
             gap: rem(8);
         }
     }
-}
 
-.header-body-wrap {
-    @include flexColumn;
-    gap: rem(8);
-    padding: 12px 0;
-    background-color: red;
-}
+    .header-body-wrap {
+        @include flexColumn;
+        gap: rem(8);
+        padding: 12px 0;
+    }
 
-.top-control-box {
-    @include flexYCenter;
-    justify-content: end;
-    font-size: 15px;
-    height: 32px;
+    .top-control-box {
+        @include flexYCenter;
+        justify-content: end;
+        font-size: 15px;
+        height: 32px;
 
-    .menu-wrap {
-        position: relative;
+        .menu-wrap {
+            position: relative;
 
-        &:has(:focus-within) {
-            &:has(:focus-visible) {
-                outline: 1px solid #000;
+            &:has(:focus-within) {
+                &:has(:focus-visible) {
+                    outline: 1px solid #000;
+                }
             }
-        }
 
-        input {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-        }
-        [class*='icons-'] {
-            transition: 0.2s;
-        }
-
-        .menu-list {
-            transition: 0.2s;
-            transform: translateX(-50%);
-            pointer-events: none;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            background-color: #fff;
-            padding: 10px;
-            border: 1px solid #000;
-            opacity: 0;
-            z-index: 1;
-        }
-
-        &:has(input:checked) {
+            input {
+                position: absolute;
+                inset: 0;
+                opacity: 0;
+            }
             [class*='icons-'] {
-                transform: rotate(180deg);
+                transition: 0.2s;
             }
 
             .menu-list {
-                pointer-events: auto;
-                opacity: 1;
-            }
-        }
-    }
-
-    .top-control {
-        @include flexYCenter;
-        margin-left: rem(4);
-        height: 100%;
-        .control {
-            height: 100%;
-            transition: 0.6s;
-            label {
-                @include flexYCenter;
-                gap: rem(2);
-            }
-        }
-        .control-gov {
-            @include flexYCenter;
-            gap: rem(2);
-
-            &::after {
-                @include mask('icons/ico_go_20.svg');
-                display: inline-block;
-                transition: 0.3s;
-                content: '';
-                width: 16px;
-                height: 16px;
-
-                background-color: currentColor;
-            }
-        }
-        a {
-            i {
-                transition: 0.6s;
+                transition: 0.2s;
+                transform: translateX(-50%);
+                pointer-events: none;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                background-color: #fff;
+                padding: 10px;
+                border: 1px solid #000;
+                opacity: 0;
+                z-index: 1;
             }
 
-            &::after {
-                @include mask('icons/arrow-down.svg');
-                transition: 0.3s;
-                content: '';
-                width: 16px;
-                height: 16px;
-                // background: url(/assets/images/icons/arrow-down.svg) no-repeat
-                //     center center / 100%;
-                // background-image: url(/assets/images/icons/arrow-down.svg);
-                // background-repeat: no-repeat;
-                // background-position: 0 10px;
-                // background-size: 100%;
-                background-color: currentColor;
-            }
-
-            &:hover {
-                background-color: #edf1f5;
-                border-radius: rem(6);
-                i {
+            &:has(input:checked) {
+                [class*='icons-'] {
                     transform: rotate(180deg);
-                    transition: 0.6s;
+                }
+
+                .menu-list {
+                    pointer-events: auto;
+                    opacity: 1;
                 }
             }
         }
 
-        .control {
+        .top-control {
             @include flexYCenter;
-            gap: rem(2);
-        }
-        i {
-            width: 16px;
-            height: 16px;
-        }
-        &:not(:last-child) {
-            &::after {
-                content: '';
-                text-align: center;
-                width: rem(1);
-                height: rem(16);
-                background-color: #d8d8d8;
-                margin: 0 8px;
+            margin-left: rem(4);
+            height: 100%;
+            .control {
+                height: 100%;
+                transition: 0.6s;
+                label {
+                    @include flexYCenter;
+                    gap: rem(2);
+                }
+            }
+            .control-gov {
+                @include flexYCenter;
+                gap: rem(2);
+
+                &::after {
+                    @include mask('icons/ico_go_20.svg');
+                    display: inline-block;
+                    transition: 0.3s;
+                    content: '';
+                    width: 16px;
+                    height: 16px;
+
+                    background-color: currentColor;
+                }
+            }
+            a {
+                i {
+                    transition: 0.6s;
+                }
+
+                &::after {
+                    @include mask('icons/arrow-down.svg');
+                    transition: 0.3s;
+                    content: '';
+                    width: 16px;
+                    height: 16px;
+                    // background: url(/assets/images/icons/arrow-down.svg) no-repeat
+                    //     center center / 100%;
+                    // background-image: url(/assets/images/icons/arrow-down.svg);
+                    // background-repeat: no-repeat;
+                    // background-position: 0 10px;
+                    // background-size: 100%;
+                    background-color: currentColor;
+                }
+
+                &:hover {
+                    background-color: #edf1f5;
+                    border-radius: rem(6);
+                    i {
+                        transform: rotate(180deg);
+                        transition: 0.6s;
+                    }
+                }
+            }
+
+            .control {
+                @include flexYCenter;
+                gap: rem(2);
+            }
+            i {
+                width: 16px;
+                height: 16px;
+            }
+            &:not(:last-child) {
+                &::after {
+                    content: '';
+                    text-align: center;
+                    width: rem(1);
+                    height: rem(16);
+                    background-color: #d8d8d8;
+                    margin: 0 8px;
+                }
+            }
+            .checkbox1 {
+                @include flexYCenter;
             }
         }
-        .checkbox1 {
-            @include flexYCenter;
-        }
+    }
+
+    .header-logo-wrap {
+        @include flexBetween;
+    }
+
+    .header-logo {
+        @include flex;
+        gap: rem(32);
+    }
+
+    .header-nav-wrap {
+        @include flex;
+        gap: rem(8);
+        font-weight: 700;
+    }
+
+    .header-gnb-wrap {
+        border-top: 1px solid #d8d8d8;
+    }
+    .header-gnb-box {
+        @include flexYCenter;
+        gap: rem(16);
+        height: rem(62);
+        color: #555555;
+        font-size: rem(19);
+    }
+    .header-gnb-item {
+        // @include flexYCenter;
+        height: 100%;
     }
 }
 
-.header-logo-wrap {
-    @include flexBetween;
-}
-
-.header-logo {
-    @include flex;
-    gap: rem(32);
-}
-
-.header-nav-wrap {
-    @include flex;
-    gap: rem(8);
-    font-weight: 700;
-}
-
-.header-gnb-wrap {
-    border-top: 1px solid #d8d8d8;
-}
-.header-gnb-box {
-    @include flexYCenter;
-    gap: rem(16);
-    height: rem(62);
-    color: #555555;
-    font-size: rem(19);
-}
-.header-gnb-item {
-    // @include flexYCenter;
-    height: 100%;
-}
-
-// 반응형
+// 반응형pc
 @include tablet {
     .layout-inner {
         padding: 0 rem(16) !important;

@@ -23,7 +23,7 @@
     }
 }
 
-.ui-btn-detail {
+.ui-btn-detail-go {
     @include flexYCenter;
     display: inline-flex;
 
@@ -41,11 +41,6 @@
         gap: rem(8);
     }
 
-    .ui-title-txt {
-        font-size: rem(32);
-        font-weight: 700;
-    }
-
     [class*='ui-btn-'] {
         @include flexYCenter {
             gap: rem(4);
@@ -57,9 +52,74 @@
         }
     }
 }
+.ui-title-txt {
+    font-size: rem(32);
+    font-weight: 700;
+}
 
 .swiper-pagination-bullet-active {
     width: rem(20);
     border-radius: rem(140);
     background-color: #246beb;
+}
+
+.ui-card-wrap {
+    @include flex {
+        gap: rem(24);
+    }
+}
+
+.ui-card-box {
+    @include flexColumn {
+        gap: rem(24);
+    }
+
+    .ui-card-title {
+        font-size: rem(19);
+        font-weight: 700;
+    }
+    .ui-card-txt {
+        color: #555555;
+        @include ellipsis(2);
+    }
+}
+
+.ui-btn-detail {
+    @include flexYCenter;
+    gap: rem(4);
+}
+.ui-btn-more {
+    @include flexYCenter {
+        gap: rem(4);
+
+        i {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &:focus {
+        outline-offset: 0.4rem;
+        outline: 2px solid rgba(36, 107, 235, 0.8);
+        border-radius: 6px;
+    }
+    &:active {
+        background-color: #cdd7e4;
+        padding: 1px;
+        transition: 0.4s ease-in-out;
+    }
+}
+
+.ui-img-box {
+    @include flexCenter;
+}
+
+.ui-badge {
+    @include flexCenter;
+    display: inline-flex;
+    font-size: rem(15);
+    color: #1d56bc;
+    height: rem(24);
+    padding: 0 rem(8);
+    background-color: #eff5ff;
+    border-radius: rem(4);
 }

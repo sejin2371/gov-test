@@ -3,7 +3,7 @@
 .main-banner-wrap {
     background-color: #d8e4f2;
     width: 100%;
-    padding: rem(32) rem(100);
+    padding: rem(32) 0;
 
     .swiper-slide {
         @include flexCenter;
@@ -108,4 +108,18 @@
             outline: 2px solid rgba(36, 107, 235, 0.8);
         }
     }
+}
+
+// 반응형pc
+@include device {
+    .banner-txt-box {
+        .banner-tit {
+            font-size: 25px;
+        }
+    }
+    // .main-banner-wrap {
+    //     .swiper-slide {
+    //         height: rem(400);
+    //     }
+    // }
 }
