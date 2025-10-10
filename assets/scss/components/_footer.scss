@@ -188,95 +188,98 @@
         .footer-snb-wrap {
             font-size: rem(16);
         }
-        .footer-cont-wrap {
-            gap: rem(32) !important;
+        .com-footer-wrap {
+            .footer-cont-wrap {
+                gap: rem(32);
 
-            .footer-logo {
-                height: rem(32);
-                img {
+                .footer-logo {
                     height: rem(32);
+                    img {
+                        height: rem(32);
+                    }
+                }
+            }
+            .footer-cont-box {
+                gap: rem(32);
+
+                .info-box {
+                    gap: rem(28);
+                }
+                .tel {
+                    gap: rem(24);
+
+                    li {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
                 }
             }
         }
         .com-footer-wrap > .layout-inner {
             padding: rem(32) rem(16) !important;
         }
-        .footer-cont-box {
-            gap: rem(32) !important;
-
-            .info-box {
-                gap: rem(28);
-            }
-            .tel {
-                gap: rem(24) !important;
-
-                li {
-                    flex-direction: column !important;
-                    align-items: flex-start !important;
-                }
-            }
-        }
     }
 }
 
 @include mobile {
     .page-main-wrap {
-        .footer-cont-wrap {
-            gap: rem(32) !important;
-            padding: rem(32) 0;
-        }
-        .footer-logo {
-            height: rem(32) !important;
-
-            img {
-                height: rem(32);
+        .com-footer-wrap {
+            .footer-cont-wrap {
+                gap: rem(32);
+                padding: rem(32) 0;
             }
-        }
-        .footer-snb-wrap {
-            .layout-inner {
-                padding: 0 !important;
-                flex-direction: column !important;
-                .menu {
-                    width: 100%;
-                    min-height: rem(48);
-                    padding: 0 rem(16) !important;
-                    border: 0 !important;
-                    border-bottom: 1px solid #d8d8d8 !important;
+            .footer-logo {
+                height: rem(32);
 
-                    &:last-child {
-                        border-bottom: none !important;
+                img {
+                    height: rem(32);
+                }
+            }
+            .footer-snb-wrap {
+                .layout-inner {
+                    padding: 0 !important;
+                    flex-direction: column;
+
+                    .menu {
+                        font-size: rem(15);
+                        width: 100%;
+                        min-height: rem(48);
+                        padding: 0 rem(16);
+                        border: 0;
+                        border-bottom: 1px solid #d8d8d8;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
                     }
                 }
             }
         }
-        .person-box {
-            padding: rem(24) rem(16) 0 !important;
-        }
-        .footer-cont-box {
-            flex-direction: column !important;
-            font-size: rem(15);
-            gap: rem(32) !important;
+        .com-footer-wrap {
+            .footer-cont-box {
+                flex-direction: column;
+                font-size: rem(15);
+                gap: rem(32);
 
-            .info-box {
+                .info-box {
+                    gap: rem(16);
+                }
+            }
+            .link-box {
+                gap: rem(32);
+                button {
+                    height: auto;
+                }
+            }
+            .footer-btm-cont {
+                flex-direction: column;
+                align-items: flex-start;
                 gap: rem(16);
             }
-        }
-        .link-box {
-            gap: rem(32) !important;
-            button {
-                height: auto !important;
+            .footer-btm {
+                font-size: rem(15);
+                padding: rem(32) 0;
             }
-        }
-
-        .footer-btm-cont {
-            flex-direction: column !important;
-            align-items: flex-start !important;
-            gap: rem(16);
-        }
-        .footer-btm {
-            font-size: rem(15);
-            padding: rem(32) 0 !important;
-            // margin: 0 -1.6rem !important;
         }
     }
 }

@@ -1312,7 +1312,7 @@
         <!-- script -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
         <script>
-            var swiper = new Swiper('.main-banner-swiper', {
+            const mainBannerSwiper = new Swiper('.main-banner-swiper', {
                 slidesPerView: 1,
                 loop: true,
                 navigation: {
@@ -1324,9 +1324,8 @@
                     clickable: true,
                 },
             });
-        </script>
-        <script>
-            var swiper = new Swiper('.favorit-swiper', {
+
+            const favoritSwiper = new Swiper('.favorit-swiper', {
                 slidesPerView: 1,
                 spaceBetween: 16,
                 breakpoints: {
@@ -1348,9 +1347,7 @@
                     clickable: true,
                 },
             });
-        </script>
-        <script>
-            var swiper = new Swiper('.composite-swiper', {
+            const compositeSwiper = new Swiper('.composite-swiper', {
                 slidesPerView: 1,
                 spaceBetween: 30,
                 breakpoints: {
@@ -1372,12 +1369,14 @@
                     clickable: true,
                 },
             });
-        </script>
-        <script>
-            var swiper = new Swiper('.complain-swiper', {
+            const complainSwiper = new Swiper('.complain-swiper', {
+                autoplay: {
+                    delay: 2000,
+                },
+                initialSlide: 0,
                 slidesPerView: 1,
                 spaceBetween: 24,
-                loop: true,
+                loopSlides: 1,
                 breakpoints: {
                     1024: {
                         slidesPerView: 2,
