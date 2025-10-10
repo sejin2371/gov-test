@@ -1,7 +1,6 @@
 @use '../util/' as *;
-.com-main-wrap {
+.page-main-wrap {
     // 자주찾는 메뉴
-
     .main-favorit-wrap {
         .layout-inner {
             @include flexColumn;
@@ -178,15 +177,6 @@
             background-color: #dfe8f4;
             border-radius: 12px 12px 0 0;
         }
-        .policy-card-txt {
-            @include flexColumn;
-            gap: rem(24);
-            padding: rem(24);
-
-            .ui-btn-detail {
-                margin-left: auto;
-            }
-        }
     }
     // 정책 소개 //
     // 뉴스
@@ -277,21 +267,117 @@
             }
         }
     }
+    // 뉴스 //
+    // 민원 서비스
+    .main-complain-wrap {
+        .layout-inner {
+            @include flexColumn {
+                gap: rem(40);
+                margin-top: rem(80);
+            }
+        }
+        .ui-card-badge-has {
+            border: 1px solid #c6c6c6;
+            border-radius: rem(12);
+        }
+        .complain-swiper {
+            @include flexColumn {
+                gap: rem(40);
+            }
+        }
+
+        .complain-indicator {
+            @include flexYCenter {
+                justify-content: end;
+                gap: rem(8);
+            }
+            div {
+                @include flexYCenter;
+            }
+            .complain-button-stop,
+            .complain-button-prev,
+            .complain-button-next,
+            .complain-button-more {
+                @include flexCenter;
+                border: 1px solid #e4e4e4;
+                border-radius: 100%;
+                width: rem(40);
+                height: rem(40);
+            }
+        }
+        .complain-pagination {
+            gap: rem(4);
+            width: auto;
+
+            .swiper-pagination-current {
+                color: #003675;
+            }
+        }
+    }
+    // 민원 서비스 //
+    // 인물 소개
+    .main-person-wrap {
+        padding: rem(80) 0;
+        margin-top: rem(80);
+        background-color: #edf1f5;
+
+        .layout-inner {
+            @include flex;
+
+            min-height: rem(322);
+        }
+
+        .thumb {
+            max-width: rem(410);
+            height: 100%;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .person-box {
+            @include flexColumn {
+                gap: rem(24);
+            }
+            padding: rem(24) rem(40);
+        }
+        .ui-card-title {
+            font-size: rem(32);
+        }
+    }
+    // 인물 소개 //
 }
 
 // 반응형pc
 @include device {
-    .ui-title-wrap {
-        .ui-title-txt {
-            font-size: rem(25);
+    .page-main-wrap {
+        .ui-title-wrap {
+            .ui-title-txt {
+                font-size: rem(25);
+            }
+        }
+        .main-policy-wrap {
+            .ui-card-wrap {
+                flex-wrap: wrap;
+            }
+            .policy-card-box {
+                width: 40% !important;
+            }
+        }
+        .main-person-wrap {
+            .ui-card-title {
+                font-size: rem(25) !important;
+            }
         }
     }
-    .main-policy-wrap {
-        .ui-card-wrap {
-            flex-wrap: wrap;
-        }
-        .policy-card-box {
-            width: 40% !important;
+}
+
+@include tablet {
+    .page-main-wrap {
+        .main-person-wrap {
+            .thumb {
+                width: 40%;
+            }
         }
     }
 }
@@ -357,7 +443,7 @@
             flex-direction: column !important;
 
             .composite-card-main {
-                display: flex;
+                flex-direction: row;
                 height: auto;
                 width: 100%;
 
@@ -375,6 +461,14 @@
         .main-news-wrap {
             .news-card-box {
                 width: 90%;
+            }
+        }
+        .main-person-wrap {
+            .layout-inner {
+                flex-direction: column;
+            }
+            .ui-card-txt {
+                -webkit-line-clamp: 4;
             }
         }
     }

@@ -69,6 +69,16 @@
     }
 }
 
+.ui-card-badge-has {
+    @include flexColumn;
+    gap: rem(24);
+    padding: rem(24);
+
+    .ui-btn-detail {
+        margin-left: auto;
+    }
+}
+
 .ui-card-box {
     @include flexColumn {
         gap: rem(24);
@@ -81,12 +91,15 @@
     .ui-card-txt {
         color: #555555;
         @include ellipsis(2);
+        word-break: keep-all;
+        word-wrap: break-word;
     }
 }
 
 .ui-btn-detail {
     @include flexYCenter;
     gap: rem(4);
+    height: rem(40);
 }
 .ui-btn-more {
     @include flexYCenter {
