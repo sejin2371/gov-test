@@ -1,0 +1,77 @@
+@use '../util/' as *;
+
+// sub1 page
+.page-sub1-wrap {
+    .sub1-page-breadcrumb {
+        @include flexColumn;
+        padding-top: rem(24);
+        padding-bottom: rem(48);
+    }
+    .total-search-wrap {
+        padding: rem(64) 0;
+
+        .layout-inner {
+            @include flexCenter;
+        }
+
+        .search-box-inner {
+            @include flexColumn {
+                gap: rem(12);
+            }
+            width: 100%;
+            max-width: rem(792);
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+
+            .icons-search {
+                @include flexCenter;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: rem(24);
+                width: 40px;
+                height: 40px;
+
+                @include mobile {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+
+        .search-form {
+            width: 100%;
+            height: rem(80);
+            font-size: rem(24);
+            padding: 0 48px 0 rem(16);
+            border: 1px solid #58616a;
+            border-radius: rem(10);
+            box-sizing: border-box;
+
+            @include mobile {
+                height: rem(64);
+                font-size: rem(22);
+                padding: 0 rem(8);
+            }
+        }
+        ::placeholder {
+            font-size: rem(24);
+
+            @include mobile {
+                font-size: rem(22);
+            }
+        }
+    }
+
+    .sub1-main-wrap {
+        @include flex;
+        padding: rem(64) 0;
+    }
+    .main-snb-wrap {
+        width: auto;
+    }
+}
+// sub1 page //

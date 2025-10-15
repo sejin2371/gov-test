@@ -1,6 +1,9 @@
 /* util */
 @use './util/' as *;
 
+/* lib */
+@use './lib';
+
 /* reset */
 @use './reset';
 
@@ -10,14 +13,11 @@
 /* common */
 @use './common/' as *;
 
-/* components */
-@use './components';
-
 /* layout */
 @use './layout';
 
-/* lib */
-@use './lib';
+/* components */
+@use './components';
 
 /* page */
 @use './page';

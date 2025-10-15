@@ -52,9 +52,24 @@
         }
     }
 }
+.ui-page-title {
+    font-size: rem(40);
+    font-weight: 700;
+
+    @include device {
+        font-size: rem(32);
+    }
+}
+
 .ui-title-txt {
     font-size: rem(32);
     font-weight: 700;
+}
+
+.ui-snb-title {
+    font-size: rem(24);
+    font-weight: 700;
+    padding: rem(16 0);
 }
 
 .swiper-pagination-bullet-active {
@@ -135,4 +150,194 @@
     padding: 0 rem(8);
     background-color: #eff5ff;
     border-radius: rem(4);
+}
+
+.ui-plus-search {
+    @include flexYCenter {
+        width: fit-content;
+        gap: rem(4);
+    }
+    height: rem(40);
+}
+
+.ui-breadcrumb {
+    @include flex {
+        // gap: rem(24);
+    }
+    padding-bottom: rem(40);
+
+    .home {
+        @include flexYCenter {
+            gap: rem(4);
+        }
+    }
+
+    .home::before {
+        content: '';
+        width: rem(24);
+        height: rem(24);
+        background: url(/assets/images/icons/ico_bread_home.svg) no-repeat;
+    }
+
+    a {
+        @include flexYCenter;
+        font-size: 15px;
+        border-bottom: 1px solid #8e8e8e;
+        line-height: 1.2;
+    }
+
+    li {
+        @include flexYCenter {
+            gap: rem(4);
+        }
+
+        &:not(:first-child) {
+            &::before {
+                content: '';
+                display: inline-block;
+                background-image: url(/assets/images/icons/arrow-right.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 16px;
+                height: 16px;
+                margin-left: rem(4);
+            }
+        }
+    }
+}
+
+.ui-snb-warp {
+}
+
+.ui-snb-item {
+    padding: rem(24 0);
+    position: relative;
+    border-bottom: 1px solid #cdd1d5;
+    &:first-child {
+        border-top: 1px solid #cdd1d5;
+    }
+
+    &.active {
+        .snb-btn::after {
+            transform: rotate(180deg);
+        }
+
+        .ui-snb-checkbox-wrap {
+            max-height: 500px; /* 메뉴의 최대 높이보다 크게 설정 (충분히 크면 됩니다) */
+            // opacity: 1;
+            // display: block;
+        }
+    }
+
+    // .ui-snb-checkbox-wrap {
+    //     display: none;
+    // }
+
+    .snb-btn {
+        @include flexYCenter;
+        width: 100%;
+        color: #052b57;
+        font-size: rem(19);
+
+        &::after {
+            content: '';
+            display: inline-flex;
+            width: rem(20);
+            height: rem(20);
+            background-image: url(/assets/images/icons/arrow-down.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: auto;
+            transition: 0.4s ease-in-out;
+        }
+    }
+}
+
+.ui-snb-checkbox-wrap {
+    max-height: 0; /* 초기 상태: 높이를 0으로 설정하여 숨김 */
+
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+
+    label {
+        color: #1d1d1d;
+        cursor: pointer;
+    }
+}
+
+.ui-check-box {
+    @include flexColumn {
+        gap: rem(24);
+    }
+    padding-top: rem(24);
+
+    .check-item {
+        @include flexYCenter {
+            gap: rem(8);
+        }
+    }
+}
+
+.ui-chip-box {
+    @include flexBetween {
+        gap: rem(24);
+    }
+    padding-top: rem(24);
+    word-break: keep-all;
+    word-wrap: break-word;
+
+    input[type='radio'] {
+        display: none;
+    }
+    input[type='radio'] + label {
+        font-size: 15px;
+        // cursor: pointer;
+        border: solid 1px #b1b8be;
+        border-radius: rem(6);
+        padding: rem(0 10);
+        display: inline-block;
+    }
+    input[type='radio']:checked + label {
+        background-color: #ecf2fe;
+        border-color: #256ef4;
+        &::before {
+            content: '';
+            display: inline-flex;
+            background-image: url(/assets/images/icons/element.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: rem(12);
+            height: rem(12);
+            margin-right: 5px;
+        }
+    }
+}
+
+.ui-snb-button {
+    @include flexBetween {
+        gap: rem(16);
+    }
+    margin-top: rem(24);
+
+    button {
+        flex-grow: 1;
+    }
+}
+
+.ui-btn-snb-reset {
+    border: 1px solid #58616a;
+    border-radius: rem(6);
+    padding: rem(0 16);
+    height: rem(56);
+}
+.ui-btn-snb-submit {
+    border: 1px solid #58616a;
+    border-radius: rem(6);
+    background-color: #256ef4;
+    color: #fff;
+    padding: rem(0 16);
+    height: rem(56);
 }

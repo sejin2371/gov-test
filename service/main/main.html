@@ -9,9 +9,13 @@
         />
 
         <link rel="stylesheet" href="/assets/css/style.css" />
-        <title></title>
+        <title>전자정부 - 대한민국</title>
     </head>
     <body>
+        <div id="skipNav">
+            <a href="#contents">본문으로 바로가기</a>
+        </div>
+
         <!-- main page -->
         <div class="page-main-wrap">
             <!-- header -->
@@ -40,11 +44,9 @@
                                     <label for="checkbox1"
                                         >지원
                                         <i class="icons-arrow-down"></i>
-
                                         <input type="checkbox" id="checkbox1"
                                     /></label>
                                 </div>
-
                                 <div class="menu-list">
                                     <ul>
                                         <li>
@@ -72,7 +74,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="header-logo-wrap layout-inner">
                         <div>
                             <a href="#" class="header-logo">
@@ -87,7 +88,6 @@
                                 />
                             </a>
                         </div>
-
                         <div>
                             <ul class="header-nav-wrap">
                                 <li>
@@ -175,7 +175,7 @@
             </header>
             <!-- //header -->
             <!-- main -->
-            <main class="com-main-wrap">
+            <main class="com-main-wrap" id="contents">
                 <div class="main-banner-wrap">
                     <div class="layout-inner">
                         <div class="swiper main-banner-swiper">
@@ -837,18 +837,50 @@
                 <div class="main-news-wrap">
                     <div class="layout-inner">
                         <div class="ui-title-txt">뉴스</div>
-                        <div class="news-cont-wrap">
+                        <div class="news-cont-wrap ui-tab-wrap">
                             <div class="news-snb-wrap">
-                                <ul class="news-snb">
-                                    <li><button type="button">전체</button></li>
+                                <ul
+                                    class="news-snb"
+                                    role="tablist"
+                                    aria-label="뉴스 탭"
+                                >
                                     <li>
-                                        <button type="button">공지사항</button>
+                                        <button
+                                            type="button"
+                                            role="tab"
+                                            aria-selected="true"
+                                            id="news-tab0"
+                                        >
+                                            전체
+                                        </button>
                                     </li>
                                     <li>
-                                        <button type="button">자료실</button>
+                                        <button
+                                            type="button"
+                                            role="tab"
+                                            aria-selected="false"
+                                            id="news-tab1"
+                                        >
+                                            공지사항
+                                        </button>
                                     </li>
                                     <li>
-                                        <button type="button">
+                                        <button
+                                            type="button"
+                                            role="tab"
+                                            aria-selected="false"
+                                            id="news-tab2"
+                                        >
+                                            자료실
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            type="button"
+                                            role="tab"
+                                            aria-selected="false"
+                                            id="news-tab3"
+                                        >
                                             자주묻는 질문
                                         </button>
                                     </li>
@@ -858,111 +890,143 @@
                                     <i class="icons-btn-more"></i>
                                 </button>
                             </div>
-                            <div class="ui-card-wrap">
-                                <div class="news-card-box">
-                                    <div class="ui-img-box">
-                                        <img
-                                            src="/assets/images/imges/museum.jpg"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div class="news-card-txt">
-                                        <div class="ui-card-box">
-                                            <div class="ui-card-title">
-                                                국립중앙박물관 특별전
-                                                '탕탕평평_글과 그림의힘'
-                                            </div>
-                                            <div class="ui-card-txt">
-                                                = 7일 서울 용산구
-                                                국립중앙박물관에서 열린 영조
-                                                즉위 300주년 기념 특별전
-                                                '탕탕평평(蕩蕩平平)-글과 그림의
-                                                힘' 언론공개회에서 참석자들이
-                                                전시를 둘러보고 있다.
-                                                2023.12.7/뉴스1
-                                            </div>
+                            <div role="tabpanel" aria-labelledby="news-tab0">
+                                <div class="ui-card-wrap">
+                                    <div class="news-card-box">
+                                        <div class="ui-img-box">
+                                            <img
+                                                src="/assets/images/imges/museum.jpg"
+                                                alt=""
+                                            />
                                         </div>
-                                        <a href="#" class="ui-btn-detail"
-                                            >자세히보기
-                                            <i class="icons-btn-shortcut"></i>
-                                        </a>
+                                        <div class="news-card-txt">
+                                            <div class="ui-card-box">
+                                                <div class="ui-card-title">
+                                                    국립중앙박물관 특별전
+                                                    '탕탕평평_글과 그림의힘'
+                                                </div>
+                                                <div class="ui-card-txt">
+                                                    = 7일 서울 용산구
+                                                    국립중앙박물관에서 열린 영조
+                                                    즉위 300주년 기념 특별전
+                                                    '탕탕평평(蕩蕩平平)-글과
+                                                    그림의 힘' 언론공개회에서
+                                                    참석자들이 전시를 둘러보고
+                                                    있다. 2023.12.7/뉴스1
+                                                </div>
+                                            </div>
+                                            <a href="#" class="ui-btn-detail"
+                                                >자세히보기
+                                                <i
+                                                    class="icons-btn-shortcut"
+                                                ></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="news-card-box">
+                                        <div class="news-card-txt">
+                                            <div class="ui-card-box">
+                                                <div class="ui-card-title">
+                                                    국립중앙박물관 특별전
+                                                    '탕탕평평_글과 그림의힘'
+                                                </div>
+                                                <div class="ui-card-txt">
+                                                    = 7일 서울 용산구
+                                                    국립중앙박물관에서 열린 영조
+                                                    즉위 300주년 기념 특별전
+                                                    '탕탕평평(蕩蕩平平)-글과
+                                                    그림의 힘' 언론공개회에서
+                                                    참석자들이 전시를 둘러보고
+                                                    있다. 2023.12.7/뉴스1
+                                                </div>
+                                            </div>
+                                            <a href="#" class="ui-btn-detail"
+                                                >자세히보기
+                                                <i
+                                                    class="icons-btn-shortcut"
+                                                ></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="news-card-box">
+                                        <div class="news-card-txt">
+                                            <div class="ui-card-box">
+                                                <div class="ui-card-title">
+                                                    국립중앙박물관 특별전
+                                                    '탕탕평평_글과 그림의힘'
+                                                </div>
+                                                <div class="ui-card-txt">
+                                                    = 7일 서울 용산구
+                                                    국립중앙박물관에서 열린 영조
+                                                    즉위 300주년 기념 특별전
+                                                    '탕탕평평(蕩蕩平平)-글과
+                                                    그림의 힘' 언론공개회에서
+                                                    참석자들이 전시를 둘러보고
+                                                    있다. 2023.12.7/뉴스1
+                                                </div>
+                                            </div>
+                                            <a href="#" class="ui-btn-detail"
+                                                >자세히보기
+                                                <i
+                                                    class="icons-btn-shortcut"
+                                                ></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="news-card-box">
+                                        <div class="ui-img-box">
+                                            <img
+                                                src="/assets/images/imges/wonju.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="news-card-txt">
+                                            <div class="ui-card-box">
+                                                <div class="ui-card-title">
+                                                    국립중앙박물관 특별전
+                                                    '탕탕평평_글과 그림의힘'
+                                                </div>
+                                                <div class="ui-card-txt">
+                                                    = 7일 서울 용산구
+                                                    국립중앙박물관에서 열린 영조
+                                                    즉위 300주년 기념 특별전
+                                                    '탕탕평평(蕩蕩平平)-글과
+                                                    그림의 힘' 언론공개회에서
+                                                    참석자들이 전시를 둘러보고
+                                                    있다. 2023.12.7/뉴스1
+                                                </div>
+                                            </div>
+                                            <a href="#" class="ui-btn-detail"
+                                                >자세히보기
+                                                <i
+                                                    class="icons-btn-shortcut"
+                                                ></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="news-card-box">
-                                    <div class="news-card-txt">
-                                        <div class="ui-card-box">
-                                            <div class="ui-card-title">
-                                                국립중앙박물관 특별전
-                                                '탕탕평평_글과 그림의힘'
-                                            </div>
-                                            <div class="ui-card-txt">
-                                                = 7일 서울 용산구
-                                                국립중앙박물관에서 열린 영조
-                                                즉위 300주년 기념 특별전
-                                                '탕탕평평(蕩蕩平平)-글과 그림의
-                                                힘' 언론공개회에서 참석자들이
-                                                전시를 둘러보고 있다.
-                                                2023.12.7/뉴스1
-                                            </div>
-                                        </div>
-                                        <a href="#" class="ui-btn-detail"
-                                            >자세히보기
-                                            <i class="icons-btn-shortcut"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="news-card-box">
-                                    <div class="news-card-txt">
-                                        <div class="ui-card-box">
-                                            <div class="ui-card-title">
-                                                국립중앙박물관 특별전
-                                                '탕탕평평_글과 그림의힘'
-                                            </div>
-                                            <div class="ui-card-txt">
-                                                = 7일 서울 용산구
-                                                국립중앙박물관에서 열린 영조
-                                                즉위 300주년 기념 특별전
-                                                '탕탕평평(蕩蕩平平)-글과 그림의
-                                                힘' 언론공개회에서 참석자들이
-                                                전시를 둘러보고 있다.
-                                                2023.12.7/뉴스1
-                                            </div>
-                                        </div>
-                                        <a href="#" class="ui-btn-detail"
-                                            >자세히보기
-                                            <i class="icons-btn-shortcut"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="news-card-box">
-                                    <div class="ui-img-box">
-                                        <img
-                                            src="/assets/images/imges/wonju.png"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div class="news-card-txt">
-                                        <div class="ui-card-box">
-                                            <div class="ui-card-title">
-                                                국립중앙박물관 특별전
-                                                '탕탕평평_글과 그림의힘'
-                                            </div>
-                                            <div class="ui-card-txt">
-                                                = 7일 서울 용산구
-                                                국립중앙박물관에서 열린 영조
-                                                즉위 300주년 기념 특별전
-                                                '탕탕평평(蕩蕩平平)-글과 그림의
-                                                힘' 언론공개회에서 참석자들이
-                                                전시를 둘러보고 있다.
-                                                2023.12.7/뉴스1
-                                            </div>
-                                        </div>
-                                        <a href="#" class="ui-btn-detail"
-                                            >자세히보기
-                                            <i class="icons-btn-shortcut"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                            </div>
+
+                            <div
+                                role="tabpanel"
+                                aria-labelledby="news-tab1"
+                                hidden
+                            >
+                                1
+                            </div>
+                            <div
+                                role="tabpanel"
+                                aria-labelledby="news-tab2"
+                                hidden
+                            >
+                                2
+                            </div>
+                            <div
+                                role="tabpanel"
+                                aria-labelledby="news-tab3"
+                                hidden
+                            >
+                                3
                             </div>
                         </div>
                     </div>
@@ -1311,6 +1375,7 @@
         <!-- //main page -->
         <!-- script -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+        <script src="/assets/script/ui-common.js"></script>
         <script>
             const mainBannerSwiper = new Swiper('.main-banner-swiper', {
                 slidesPerView: 1,
