@@ -1,0 +1,204 @@
+@use '../util/' as *;
+
+.page-login-form-wrap {
+    .login-form-cont-wrap {
+        @include flexColumn {
+            gap: rem(48);
+        }
+        padding-bottom: rem(64);
+    }
+
+    .login-form-wrap {
+        @include flex {
+            justify-content: center;
+        }
+        padding: rem(40 60);
+        border-top: 1px solid #d8d8d8;
+        border-bottom: 1px solid #d8d8d8;
+        width: 100%;
+
+        @include device {
+            flex-direction: column;
+            padding-left: 0;
+            padding-right: 0;
+
+            .login-form-box {
+                width: 100%;
+                padding-right: 0;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+    .login-form-box {
+        position: relative;
+        width: rem(490);
+        padding-right: rem(40);
+
+        &::after {
+            content: '';
+            width: 1px;
+            height: 100%;
+            background-color: #d8d8d8;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .login-box {
+        @include flexColumn {
+            gap: rem(24);
+        }
+
+        .login-item {
+            @include flexColumn {
+                gap: rem(12);
+            }
+            width: 100%;
+
+            #login-id,
+            #login-password {
+                width: 100%;
+                height: rem(56);
+                padding: rem(0 16);
+                border: 1px solid #717171;
+                border-radius: rem(8);
+                font-size: rem(19);
+                padding-right: 56px;
+                @include ellipsis(1);
+            }
+
+            .ui-btn-pw-visible {
+                position: absolute;
+                right: rem(16);
+                top: 50%;
+                transform: translateY(-50%);
+                background-image: url(/assets/images/icons/ico_pw_visible.svg);
+                width: rem(24);
+                height: rem(24);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .ui-btn-login {
+                justify-content: center;
+                font-size: rem(19);
+                background-color: #246beb;
+                border-radius: rem(8);
+                color: #fff;
+            }
+            .user-help-link-wrap {
+                @include flexCenter;
+
+                li {
+                    position: relative;
+
+                    &:not(:first-child) {
+                        // border-left: 1px solid #cdd1d5;
+                        margin-left: rem(8);
+                        padding-left: rem(9);
+
+                        ::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            width: rem(1);
+                            height: rem(16);
+                            background-color: #d8d8d8;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .login-info-box {
+        width: rem(490);
+        padding: rem(24 0 24 40);
+
+        li {
+            position: relative;
+            padding-left: rem(12);
+
+            &::before {
+                position: absolute;
+                content: '•';
+                top: 0;
+                left: 0;
+            }
+            &:not(:first-child) {
+                margin-top: rem(16);
+            }
+        }
+
+        @include device {
+            margin-top: rem(32);
+            border-top: 1px solid #d8d8d8;
+            width: 100%;
+            padding: 0;
+            padding-top: rem(40);
+        }
+    }
+
+    .btn-login-box {
+        @include flexYCenter;
+
+        .ui-btn-login {
+            flex: 1;
+        }
+    }
+    .login-method-box {
+        width: rem(490);
+        padding-left: rem(40);
+
+        @include device {
+            width: 100%;
+            padding-left: 0;
+        }
+
+        .ui-card-box {
+            @include device {
+                margin-top: rem(32);
+                padding-top: rem(32);
+                border-top: 1px solid #d8d8d8;
+            }
+        }
+
+        .btn-login-box {
+            flex-direction: column;
+            gap: rem(16);
+            font-size: rem(19);
+            .ui-btn-login {
+                width: 100%;
+
+                div {
+                    @include flexCenter;
+                    height: rem(56);
+                }
+            }
+        }
+
+        .btn-conts-expand {
+            @include flexYCenter {
+                gap: rem(8);
+            }
+            height: rem(40);
+
+            &::before {
+                content: '';
+                display: inline-flex;
+                width: rem(20);
+                height: rem(20);
+                background-image: url(/assets/images/icons/ico_arr_func_20.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+}

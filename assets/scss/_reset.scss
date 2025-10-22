@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@use './util/' as *;
+
 html,
 body,
 div,
@@ -84,7 +86,8 @@ time,
 mark,
 audio,
 video,
-button {
+button,
+input {
     margin: 0;
     padding: 0;
     border: 0;
@@ -227,5 +230,24 @@ strong {
         font-weight: bold;
         line-height: 18px;
         color: #fff;
+    }
+}
+
+legend {
+    @include hidden;
+}
+
+.index-select {
+    height: 100vh;
+    @include flexCenter {
+        gap: rem(24);
+    }
+}
+
+.index-page {
+    height: 100vh;
+    @include flexCenter {
+        flex-direction: column;
+        gap: rem(24);
     }
 }

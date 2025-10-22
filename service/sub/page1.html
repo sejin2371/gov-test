@@ -193,11 +193,13 @@
                 </div>
                 <div class="total-search-wrap bgc-secondary-subtler">
                     <div class="layout-inner">
-                        <div class="search-box-inner">
+                        <fieldset class="search-box-inner">
+                            <legend>검색</legend>
+
                             <div class="search-box">
-                                <label for="search-form" class="hidden"
-                                    >검색어 입력</label
-                                >
+                                <label for="search-form" class="hidden">
+                                    검색어 입력
+                                </label>
                                 <input
                                     type="text"
                                     class="search-form b"
@@ -205,26 +207,27 @@
                                     placeholder="검색어를 입력해주세요"
                                 />
                                 <button
-                                    class="icons-search"
                                     type="button"
+                                    class="serch-btn"
                                     aria-label="검색"
-                                    tabindex="0"
-                                ></button>
+                                >
+                                    <i class="icons-search"></i>
+                                </button>
                             </div>
                             <button
                                 class="ui-plus-search"
                                 type="button"
                                 aria-label="고급검색"
                             >
-                                <a class="icons-multi"></a>
-                                <div>고급검색</div>
+                                <i class="icons-multi"></i>
+                                <span>고급검색</span>
                             </button>
-                        </div>
+                        </fieldset>
                     </div>
                 </div>
                 <div class="sub1-main-wrap layout-inner">
-                    <div class="main-snb-wrap">
-                        <div class="ui-snb-title">검색필터</div>
+                    <div class="main-snb-wrap res-device-hide">
+                        <div class="ui-sub-title">검색필터</div>
                         <form>
                             <ul class="ui-snb-wrap">
                                 <li class="ui-snb-item">
@@ -301,7 +304,7 @@
                                         검색기간
                                     </button>
                                     <div class="ui-snb-checkbox-wrap">
-                                        <ul class="ui-chip-box">
+                                        <ul class="ui-chip-box-date">
                                             <li class="chip-item">
                                                 <input
                                                     type="radio"
@@ -341,6 +344,31 @@
                                                 <label for="snb-chip-4"
                                                     >1년</label
                                                 >
+                                            </li>
+                                        </ul>
+                                        <ul class="ui-date-picker-box">
+                                            <li class="date-item">
+                                                <label
+                                                    for="snb-datepicker-start"
+                                                    >시작날짜</label
+                                                >
+                                                <input
+                                                    type="text"
+                                                    id="snb-datepicker-start"
+                                                    class="snb-datepicker"
+                                                />
+                                            </li>
+                                            <li class="date-hyphen">-</li>
+                                            <li class="date-item">
+                                                <label
+                                                    for="snb-datepicker-start"
+                                                    >종료날짜</label
+                                                >
+                                                <input
+                                                    type="text"
+                                                    id="snb-datepicker-start"
+                                                    class="snb-datepicker"
+                                                />
                                             </li>
                                         </ul>
                                     </div>
@@ -405,7 +433,7 @@
                                 </li>
                                 <li class="ui-snb-item">
                                     <button type="button" class="snb-btn b">
-                                        자료 이용 장소
+                                        자료 언어
                                     </button>
                                     <div class="ui-snb-checkbox-wrap">
                                         <ul class="ui-check-box">
@@ -432,7 +460,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <div class="ui-snb-button">
+                                <li class="ui-snb-button">
                                     <button
                                         type="reset"
                                         class="ui-btn-snb-reset"
@@ -445,11 +473,451 @@
                                     >
                                         적용하기
                                     </button>
-                                </div>
+                                </li>
                             </ul>
                         </form>
                     </div>
-                    <div class="main-cont-wrap"></div>
+                    <div class="main-cont-wrap">
+                        <div
+                            class="ui-filter-chip-wrap bgc-secondary-subtler res-device-hide"
+                        >
+                            <div class="b">
+                                선택된필터 (<span class="num">6</span>)
+                            </div>
+                            <div class="ui-filter-chip-box">
+                                <button class="ut-btn-refresh">
+                                    <span class="hidden">새로고침</span>
+                                </button>
+                                <div class="ui-chip-box">
+                                    <span class="ui-chip-has">
+                                        유아
+                                        <button
+                                            type="button"
+                                            class="ui-btn-del"
+                                        ></button>
+                                    </span>
+                                </div>
+                                <div class="ui-chip-box">
+                                    <span class="ui-chip-has">
+                                        임신출산
+                                        <button
+                                            type="button"
+                                            class="ui-btn-del"
+                                        ></button>
+                                    </span>
+                                </div>
+                                <div class="ui-chip-box">
+                                    <span class="ui-chip-has">
+                                        아동청소년
+                                        <button
+                                            type="button"
+                                            class="ui-btn-del"
+                                        ></button>
+                                    </span>
+                                </div>
+                                <div class="ui-chip-box">
+                                    <span class="ui-chip-has">
+                                        아동청소년
+                                        <button
+                                            type="button"
+                                            class="ui-btn-del"
+                                        ></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-search-list-top">
+                            <div class="search-info b">
+                                적용된 검색어 '<span class="keyword">퇴직</span
+                                >' / 검색 결과
+                                <span class="keyword">22,459</span>개
+                            </div>
+                            <div class="search-result-option">
+                                <div class="serch-list-view">
+                                    <strong>
+                                        <label for="search-result-count"
+                                            >목록 표시 개수</label
+                                        >
+                                    </strong>
+                                    <select
+                                        name="search-select"
+                                        id="search-result-count"
+                                    >
+                                        <option>10개</option>
+                                        <option>9개</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="search-list-align">
+                                    <strong>정렬기준</strong>
+                                    <div class="list-align">
+                                        <button>관련도순</button>
+                                        <button>최신순</button>
+                                        <button>인기순</button>
+                                    </div>
+                                </div> -->
+                                <dl class="search-list-align">
+                                    <dt>정렬기준</dt>
+                                    <dd>
+                                        <button>관련도순</button>
+                                    </dd>
+                                    <dd>
+                                        <button>최신순</button>
+                                    </dd>
+                                    <dd>
+                                        <button>인기순</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <ul class="list-card-wrap">
+                            <li class="ui-list-card">
+                                <div class="ui-card-info">
+                                    <span class="ui-badge">메뉴</span>
+                                    <span class="date">2023.11.01</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ui-card-box-thumb">
+                                        <div class="text">
+                                            <div class="ui-card-title">
+                                                고용노동부, 정부혁신과 적극행정
+                                                우수사례를 확산하고, 일하는 방식
+                                                개선을 통해 정부혁신을 속도감
+                                                있게 추진
+                                            </div>
+                                            <div class="ui-card-txt">
+                                                또 다른 최우수 사례로 선정된
+                                                “외국인 근로자 퇴직금
+                                                자동환급제”는 외국인 근로자가
+                                                최초 입국 시 사전 등록한 계좌에
+                                                퇴직금(출국만기보험)을 자동
+                                                지급함으로써 송출국가의 열악한
+                                                금융환경 등으로
+                                                퇴직금(출국만기보험)이
+                                                미지급되는 문제점을 개선하여
+                                                외국인 근로자의 권리구제에
+                                            </div>
+                                        </div>
+                                        <div class="thumb">
+                                            <img
+                                                src="/assets/images/imges/sample_img_total_thum1.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <ul class="ui-location">
+                                        <li>
+                                            <a href="#">뉴스・소식</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">뉴스소식</a>
+                                        </li>
+                                    </ul>
+
+                                    <a href="#" class="ui-btn-shortcut">
+                                        <span>자세히보기</span>
+                                        <i class="icons-btn-shortcut"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="ui-list-card">
+                                <div class="ui-card-info">
+                                    <span class="ui-badge">메뉴</span>
+                                    <span class="date">2023.11.01</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ui-card-box-thumb">
+                                        <div class="text">
+                                            <div class="ui-card-title">
+                                                퇴직연금복지과, 퇴직연금 수수료
+                                                부과에 관한 고시제정안 행정예고
+                                            </div>
+                                            <div class="ui-card-txt">
+                                                고용노동부 공고 제2023-453호
+                                                퇴직연금 수수료 부과에 관한
+                                                고시제정안을 행정예고 하는데
+                                                있어, 그 이유와 주요내용을
+                                                국민에게 미리 알려 이에 대한
+                                                의견을 듣기 위하여
+                                                「행정절차법」제46조에 따라
+                                                다음과 같이 공고합니다. 2023년
+                                                9월 13일 고용노동부장관
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <ul class="ui-location">
+                                        <li>
+                                            <a href="#">정보공개</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">법령정보</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">입법・행정예고</a>
+                                        </li>
+                                    </ul>
+
+                                    <a href="#" class="ui-btn-shortcut">
+                                        <span>자세히보기</span>
+                                        <i class="icons-btn-shortcut"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="ui-list-card">
+                                <div class="ui-card-info">
+                                    <span class="ui-badge">메뉴</span>
+                                    <span class="date">2023.11.01</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ui-card-box-thumb">
+                                        <div class="text">
+                                            <div class="ui-card-title">
+                                                임금 및 퇴직금 소멸시효 기산일
+                                            </div>
+                                            <div class="ui-card-txt">
+                                                퇴직금 산정시 산전.후 휴가기간이
+                                                포함되는지 여부?
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <ul class="ui-location">
+                                        <li>
+                                            <a href="#">민원</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">자주하는 질문</a>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="ui-btn-shortcut">
+                                        <span>바로가기</span>
+                                        <i class="icons-ico_go_20"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="ui-list-card">
+                                <div class="ui-card-info">
+                                    <span class="ui-badge">메뉴</span>
+                                    <span class="date">2023.11.01</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ui-card-box-thumb">
+                                        <div class="text">
+                                            <div class="ui-card-title">
+                                                퇴직연금복지과, 근로자퇴직급여
+                                                보장법 시행령 일부개정안
+                                                설명자료.hwp
+                                            </div>
+                                            <div class="ui-card-txt">
+                                                '22.4.14. 시행된 근로자퇴직급여
+                                                보장법 설명자료입니다. 업무에
+                                                참고하시기 바랍니다. &lt;1&gt;
+                                                중소기업퇴직연금기금제도
+                                                &lt;2&gt; 300인 이상
+                                                확정급여형(DB형) 퇴직연금
+                                                운영개편 &lt;2&gt;
+                                                확정급여형(DB) 퇴직연금
+                                                최소적립금 미적립시 과태료 부과
+                                                &lt;4&gt; 퇴직금 IRP 지급 의무화
+                                                &lt;5&gt; 퇴직연금 가입자 교육
+                                                제도 개편
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <ul class="ui-location">
+                                        <li>
+                                            <a href="#">정책자료</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">정책자료실</a>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="ui-btn-shortcut">
+                                        <span>바로가기</span>
+                                        <i class="icons-ico_go_20"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="ui-list-card">
+                                <div class="ui-card-info">
+                                    <span class="ui-badge">메뉴</span>
+                                    <span class="date">2023.11.01</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ui-card-box-thumb">
+                                        <div class="text">
+                                            <div class="ui-card-title">
+                                                무료법률 구조 지원.PDF
+                                            </div>
+                                            <div class="ui-card-txt">
+                                                임금체불 근로자들이 사업주를
+                                                상대로 민사절차를 통해
+                                                임금채권을 확보할 수 있도록
+                                                대한법률구조공단에서 임금 및
+                                                퇴직급여 등이 체불된 근로자에
+                                                대하여 무료로 소송 지원
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <ul class="ui-location">
+                                        <li>
+                                            <a href="#">정책자료</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">대상자별ㆍ분야별정책</a>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-group">
+                                        <a href="#" class="ui-btn-shortcut">
+                                            <span>PDF 다운로드</span>
+                                            <i class="icons-download"></i>
+                                        </a>
+                                        <a href="#" class="ui-btn-shortcut">
+                                            <span>자세히보기</span>
+                                            <i class="icons-btn-shortcut"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-list-card">
+                                <div class="ui-card-info">
+                                    <span class="ui-badge">메뉴</span>
+                                    <span class="date">2023.11.01</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ui-card-box-thumb">
+                                        <div class="text">
+                                            <div class="ui-card-title">
+                                                고용장관 "정년연장, 중요한
+                                                시대현안…노사정 빨리 머리
+                                                맞대야"
+                                            </div>
+                                            <div class="ui-card-txt">
+                                                7월 '초고령사회 계속고용
+                                                연구회'를 발족해 전문가를
+                                                중심으로 고령자 고용에 대한
+                                                정책을 논의하고 있다. 다만
+                                                정부는 정년연장보다는 퇴직 후
+                                                재고용에 무게를 두고 있는 것으로
+                                                알려졌다.
+                                            </div>
+                                        </div>
+                                        <div class="thumb">
+                                            <img
+                                                src="/assets/images/imges/card-list-image1.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <ul class="ui-location">
+                                        <li>
+                                            <a href="#">뉴스・소식</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">뉴스소식</a>
+                                        </li>
+                                    </ul>
+
+                                    <a href="#" class="ui-btn-shortcut">
+                                        <span>자세히보기</span>
+                                        <i class="icons-btn-shortcut"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="ui-list-card">
+                                <div class="ui-card-info">
+                                    <span class="ui-badge">메뉴</span>
+                                    <span class="date">2023.11.01</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ui-card-box-thumb">
+                                        <div class="text">
+                                            <div class="ui-card-title">
+                                                퇴사하기 전 꼭 봐야 할 영상!!
+                                                퇴직에 대한 모든 것! 퇴직금
+                                                계산, 사직서 작성법
+                                            </div>
+                                            <div class="ui-card-txt">
+                                                어떤 일이든 시작도 중요하지만
+                                                마무리를 어떻게 하느냐가 진짜
+                                                중요하죠 그래서~! 오늘의
+                                                랜선노동법 주제는 퇴직입니다!
+                                                퇴직금 계산, 퇴사 전 알아야 할
+                                                정보, 연차수당, 사직서,
+                                                해고예고수당 등 퇴직에 대한 모든
+                                                것~!!
+                                            </div>
+                                        </div>
+                                        <div class="thumb">
+                                            <img
+                                                src="/assets/images/imges/card-list-image2.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <ul class="ui-location">
+                                        <li>
+                                            <a href="#">뉴스・소식</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">뉴스소식</a>
+                                        </li>
+                                    </ul>
+
+                                    <a href="#" class="ui-btn-shortcut">
+                                        <span>자세히보기</span>
+                                        <i class="icons-btn-shortcut"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="ui-list-card">
+                                <div class="ui-card-info">
+                                    <span class="ui-badge">메뉴</span>
+                                    <span class="date">2023.11.01</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ui-card-box-thumb">
+                                        <div class="text">
+                                            <div class="ui-card-title">
+                                                임금 및 퇴직금 소멸시효 기산일
+                                            </div>
+                                            <div class="ui-card-txt">
+                                                퇴직금 산정시 산전.후 휴가기간이
+                                                포함되는지 여부?
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <ul class="ui-location">
+                                        <li>
+                                            <a href="#">민원</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">자주하는 질문</a>
+                                        </li>
+                                    </ul>
+
+                                    <a href="#" class="ui-btn-shortcut">
+                                        <span>자세히보기</span>
+                                        <i class="icons-btn-shortcut"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </main>
             <!-- // main // -->

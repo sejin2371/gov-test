@@ -1,0 +1,58 @@
+@use '../util/' as *;
+
+.page-login-purpose-wrap {
+    .login-purpose-cont-wrap {
+        @include flexColumn {
+            gap: rem(48);
+        }
+        padding-bottom: rem(64);
+    }
+
+    .ui-card-wrap {
+        gap: 0;
+
+        @include device {
+            flex-direction: column;
+        }
+
+        .txt-box {
+            @include flexColumn {
+                gap: rem(20);
+            }
+
+            .ui-card-txt {
+                -webkit-line-clamp: initial;
+            }
+        }
+
+        .btn-login-box {
+            @include flexColumn {
+                gap: rem(16);
+            }
+        }
+        li {
+            flex: 1;
+
+            &:not(:first-child) {
+                border-left: 1px solid #cdd1d5;
+                padding-left: rem(32);
+            }
+            &:not(:last-child) {
+                padding-right: rem(32);
+            }
+
+            @include device {
+                &:not(:first-child) {
+                    border: none;
+                    border-top: 1px solid #cdd1d5;
+                    padding: 0;
+                    padding-top: rem(32);
+                }
+                &:not(:last-child) {
+                    padding-right: 0;
+                    padding-bottom: rem(32);
+                }
+            }
+        }
+    }
+}

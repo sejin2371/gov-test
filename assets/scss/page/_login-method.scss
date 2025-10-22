@@ -1,0 +1,385 @@
+@use '../util/' as *;
+
+.page-login-method-wrap {
+    .login-method-cont-wrap {
+        @include flexColumn {
+            gap: rem(48);
+        }
+        padding-bottom: rem(64);
+        // max-width: rem(792);
+        .login-method-cont {
+            @include flexColumn {
+                gap: rem(40);
+            }
+        }
+    }
+
+    .login-option-wrap {
+        @include flexYCenter {
+            gap: rem(24);
+        }
+
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .login-certify {
+        border-top: 1px solid #d8d8d8;
+
+        .certify {
+            border-bottom: 1px solid #d8d8d8;
+            padding: rem(24 0);
+
+            @include flexBetween {
+                align-items: flex-start;
+                gap: rem(40);
+            }
+
+            @include device {
+                flex-direction: column;
+            }
+            .ui-login-card-title {
+                margin-bottom: rem(24);
+            }
+        }
+        .ui-card-box {
+            width: 100%;
+            max-width: rem(640);
+
+            .txt {
+                @include flexColumn;
+                position: relative;
+
+                .ui-card-title {
+                    @include flexBetween;
+                    font-size: rem(25);
+
+                    @include mobile {
+                        font-size: rem(21);
+                    }
+                    @include mobile {
+                        padding-left: rem(48);
+                    }
+                }
+            }
+            .ui-card-txt {
+                margin-top: rem(24);
+            }
+
+            .card-item {
+                @include flexColumn;
+                position: relative;
+                padding: rem(32 32 32 88);
+                background-color: #f8f8f8;
+                border: 1px solid #e4e4e4;
+                border-radius: rem(12);
+
+                @include mobile {
+                    padding: rem(24);
+                }
+            }
+            .mobile:before {
+                position: absolute;
+                content: '';
+                width: rem(32);
+                height: rem(32);
+                background-image: url(/assets/images/icons/ico_login_certify_type_01.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                left: rem(32);
+
+                @include mobile {
+                    left: rem(24);
+                }
+            }
+            .public:before {
+                position: absolute;
+                content: '';
+                width: rem(32);
+                height: rem(32);
+                background-image: url(/assets/images/icons/ico_login_certify_type_02.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                left: rem(32);
+
+                @include mobile {
+                    left: rem(24);
+                }
+            }
+            .simplicity:before {
+                position: absolute;
+                content: '';
+                width: rem(32);
+                height: rem(32);
+                background-image: url(/assets/images/icons/ico_login_certify_type_03.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                left: rem(32);
+
+                @include mobile {
+                    left: rem(24);
+                }
+            }
+            .sns:before {
+                position: absolute;
+                content: '';
+                width: rem(32);
+                height: rem(32);
+                background-image: url(/assets/images/icons/ico_login_certify_type_04.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                left: rem(32);
+
+                @include mobile {
+                    left: rem(24);
+                }
+            }
+            .id:before {
+                position: absolute;
+                content: '';
+                width: rem(32);
+                height: rem(32);
+                background-image: url(/assets/images/icons/ico_login_certify_type_05.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                left: rem(32);
+
+                @include mobile {
+                    left: rem(24);
+                }
+            }
+            .guest:before {
+                position: absolute;
+                content: '';
+                width: rem(32);
+                height: rem(32);
+                background-image: url(/assets/images/icons/ico_login_certify_type_06.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                left: rem(32);
+
+                @include mobile {
+                    left: rem(24);
+                }
+            }
+
+            @include device {
+                max-width: 100%;
+            }
+
+            @include mobile {
+                gap: rem(8);
+            }
+        }
+        .btn-wrap {
+            margin-top: rem(16);
+
+            a {
+                @include flexYCenter {
+                    gap: rem(4);
+                }
+                height: rem(40);
+                width: fit-content;
+            }
+
+            a::after {
+                content: '';
+                display: inline-flex;
+                width: rem(20);
+                height: rem(20);
+                background-image: url(/assets/images/icons/arrow-right.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            @include mobile {
+                margin-top: rem(24);
+                padding-top: rem(8);
+                border-top: 1px solid #d8d8d8;
+            }
+
+            .btn-conts-expand {
+                @include flexYCenter {
+                    gap: rem(8);
+                }
+                height: rem(40);
+
+                &::before {
+                    content: '';
+                    display: inline-flex;
+                    width: rem(20);
+                    height: rem(20);
+                    background-image: url(/assets/images/icons/ico_arr_func_20.svg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+        }
+    }
+    .join-guide {
+        @include flexYCenter {
+            gap: rem(16);
+        }
+
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .certify-icon-list {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: start;
+        gap: rem(16);
+
+        @include mobile {
+            grid-template-columns: repeat(1, auto);
+        }
+
+        li {
+            @include flexYCenter;
+        }
+
+        .ico-nonghyup:before {
+            content: '';
+            width: rem(24);
+            height: rem(24);
+            background-image: url(/assets/images/icons/ico_login_certify_nonghyup.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: rem(8);
+        }
+        .ico-kb:before {
+            content: '';
+            width: rem(24);
+            height: rem(24);
+            background-image: url(/assets/images/icons/ico_login_certify_kb.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: rem(8);
+        }
+        .ico-naver:before {
+            content: '';
+            width: rem(24);
+            height: rem(24);
+            background-image: url(/assets/images/icons/ico_login_certify_naver.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: rem(8);
+        }
+        .ico-banksalad:before {
+            content: '';
+            width: rem(24);
+            height: rem(24);
+            background-image: url(/assets/images/icons/ico_login_certify_banksalad.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: rem(8);
+        }
+        .ico-samsungpass:before {
+            content: '';
+            width: rem(24);
+            height: rem(24);
+            background-image: url(/assets/images/icons/ico_login_certify_samsungpass.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: rem(8);
+        }
+        .ico-shinhan:before {
+            content: '';
+            width: rem(24);
+            height: rem(24);
+            background-image: url(/assets/images/icons/ico_login_certify_shinhan.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: rem(8);
+        }
+        .ico-toss:before {
+            content: '';
+            width: rem(24);
+            height: rem(24);
+            background-image: url(/assets/images/icons/ico_login_certify_toss.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: rem(8);
+        }
+        .ico-payco:before {
+            content: '';
+            width: rem(24);
+            height: rem(24);
+            background-image: url(/assets/images/icons/ico_login_certify_payco.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: rem(8);
+        }
+        .ico-hana:before {
+            content: '';
+            width: rem(24);
+            height: rem(24);
+            background-image: url(/assets/images/icons/ico_login_certify_hana.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: rem(8);
+        }
+        .ico-driving:before {
+            content: '';
+            width: rem(24);
+            height: rem(24);
+            background-image: url(/assets/images/icons/ico_login_certify_driving.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: rem(8);
+        }
+    }
+    .certify-use-wrap {
+        @include flexColumn;
+        padding: rem(24);
+        background-color: #fff;
+    }
+
+    .certify-ico-group {
+        @include flexColumn {
+            gap: rem(24);
+        }
+        &:first-child {
+            margin-bottom: rem(24);
+        }
+    }
+}
+
+.accordion-header {
+    @include flexYCenter;
+    background-color: #eee;
+}
+
+.accordion-content {
+    display: none;
+    padding: rem(24);
+}
+
+.accordion-btn-icons.active {
+    .accordion-content {
+        display: block;
+    }
+}

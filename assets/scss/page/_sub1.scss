@@ -9,6 +9,7 @@
     }
     .total-search-wrap {
         padding: rem(64) 0;
+        margin-bottom: rem(64);
 
         .layout-inner {
             @include flexCenter;
@@ -26,18 +27,21 @@
             position: relative;
             width: 100%;
 
-            .icons-search {
+            .serch-btn {
                 @include flexCenter;
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
                 right: rem(24);
-                width: 40px;
-                height: 40px;
 
-                @include mobile {
-                    width: 32px;
-                    height: 32px;
+                i {
+                    width: 40px;
+                    height: 40px;
+
+                    @include mobile {
+                        width: 32px;
+                        height: 32px;
+                    }
                 }
             }
         }
@@ -67,11 +71,89 @@
     }
 
     .sub1-main-wrap {
-        @include flex;
-        padding: rem(64) 0;
+        // display: grid;
+        // grid-template-columns: 270px 1fr;
+        // gap: rem(80);
+
+        @include flex {
+            gap: rem(80);
+        }
+
+        @include device {
+            padding: rem(64 16);
+        }
     }
     .main-snb-wrap {
-        width: auto;
+        // width: rem(296);
+        // width: 100%;
+        max-width: rem(296);
+    }
+    .main-cont-wrap {
+        @include flexColumn {
+            gap: rem(40);
+        }
+        width: 100%;
+    }
+
+    .ui-search-list-top {
+        @include flexBetween {
+            flex-wrap: wrap;
+            gap: rem(40);
+        }
+        padding: rem(16 0 24);
+        border-bottom: 1px solid #c6c6c6;
+
+        .search-info {
+            font-size: rem(21);
+            .keyword {
+                color: #1d56bc;
+            }
+        }
+
+        @include device {
+            flex-direction: column;
+            gap: rem(32);
+            padding: 0;
+            padding-bottom: rem(32);
+
+            .search-info {
+                align-self: flex-start;
+                order: 2;
+            }
+
+            .search-result-option {
+                align-self: flex-end;
+                order: 1;
+            }
+        }
+    }
+    .search-result-option {
+        @include flexYCenter;
+    }
+    .serch-list-view {
+        @include flexYCenter;
+
+        strong {
+            margin-right: rem(12);
+        }
+        select {
+            border: none;
+            font-size: rem(17);
+            appearance: none;
+            background-image: url('/assets/images/icons/head_gnb_ico_arr.svg');
+            background-position: right center;
+            background-repeat: no-repeat;
+            padding-right: 24px;
+        }
+    }
+    .search-list-align {
+        @include flexYCenter;
+        margin-left: rem(16);
+
+        dt {
+            margin-right: rem(12);
+            font-weight: 700;
+        }
     }
 }
 // sub1 page //

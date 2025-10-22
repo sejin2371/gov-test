@@ -11,6 +11,7 @@
         background-color: #fff;
         border-top: 1px solid #d8d8d8;
         border-bottom: 1px solid #d8d8d8;
+        word-break: keep-all;
 
         .layout-inner {
             @include flexYCenter;
@@ -33,6 +34,10 @@
                 i {
                     width: rem(20);
                     height: rem(20);
+                }
+
+                @include tablet {
+                    padding: rem(0 8 0 16);
                 }
             }
         }
@@ -240,7 +245,7 @@
                     font-size: rem(15);
                     width: 100%;
                     min-height: rem(48);
-                    padding: 0 rem(16);
+                    padding: 0 rem(24);
                     border: 0;
                     border-bottom: 1px solid #d8d8d8;
 

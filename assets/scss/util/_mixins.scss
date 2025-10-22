@@ -35,8 +35,8 @@
 @mixin mask($img, $bgp: 0 0, $size: contain) {
     mask-repeat: no-repeat;
     mask-size: $size;
-    mask-image: url($imgurl + $img);
     mask-position: $bgp;
+    mask-image: url($imgurl + $img);
 }
 
 // ellipsis
@@ -85,4 +85,11 @@ $rootFontSize: 16;
         $result: list.append($result, calc($value / $rootFontSize * 1rem));
     }
     @return $result;
+}
+
+@mixin hidden {
+    position: absolute;
+    left: -999em;
+    top: -999em;
+    visibility: hidden;
 }

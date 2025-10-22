@@ -1,5 +1,181 @@
 @use '../util/' as *;
 
+// ui.buttons
+
+.ui-btn-detail-go {
+    @include flexYCenter;
+    display: inline-flex;
+
+    height: 64px;
+
+    font-size: rem(19);
+    padding: 0 rem(24);
+    background-color: #246beb;
+    border-radius: 8px;
+    color: #fff !important;
+}
+.ui-btn {
+    @include flexYCenter {
+        gap: rem(4);
+
+        i {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+.ui-btn-detail {
+    @include flexYCenter;
+    gap: rem(4);
+    height: rem(40);
+}
+.ui-btn-more {
+    @include flexYCenter {
+        gap: rem(4);
+
+        i {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &:focus {
+        outline-offset: 0.4rem;
+        outline: 2px solid rgba(36, 107, 235, 0.8);
+        border-radius: 6px;
+    }
+    &:active {
+        background-color: #cdd7e4;
+        padding: 1px;
+        transition: 0.4s ease-in-out;
+    }
+}
+.ui-btn-snb-reset {
+    border: 1px solid #58616a;
+    border-radius: rem(6);
+    padding: rem(0 16);
+    height: rem(56);
+}
+.ui-btn-snb-submit {
+    border: 1px solid #58616a;
+    border-radius: rem(6);
+    background-color: #256ef4;
+    color: #fff;
+    padding: rem(0 16);
+    height: rem(56);
+}
+.ut-btn-refresh {
+    content: '';
+    @include flexCenter;
+    width: rem(32);
+    height: rem(32);
+    border: 1px solid #c6c6c6;
+    border-radius: 100%;
+    background-image: url(/assets/images/icons/ico_refresh_16.svg);
+    background-color: #fff;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ui-btn-del {
+    content: '';
+    @include flexCenter;
+    width: rem(12);
+    height: rem(12);
+    border-radius: 100%;
+    background-image: url(/assets/images/icons/ico_chip_del.svg);
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ui-btn-shortcut {
+    @include flexYCenter {
+        gap: 4px;
+    }
+    height: 32px;
+
+    [class*='icons-'] {
+        width: 20px;
+        height: 20px;
+    }
+}
+.ui-btn-download {
+    @include flexYCenter {
+        gap: 4px;
+    }
+    height: 32px;
+
+    [class*='icons-'] {
+        width: 20px;
+        height: 20px;
+    }
+}
+.ui-btn-login {
+    @include flexYCenter {
+        gap: rem(4);
+    }
+    height: rem(56);
+    border: 1px solid #58616a;
+    border-radius: rem(8);
+    padding: rem(0 20);
+
+    div {
+        flex: 1;
+    }
+    span {
+        color: #052b57;
+        font-weight: 700;
+    }
+
+    &.active {
+        background-color: #063a74;
+        color: #fff;
+    }
+}
+.ui-link {
+    text-decoration: underline;
+}
+
+.ui-btn-right {
+    a {
+        @include flexYCenter {
+            gap: rem(4);
+        }
+        height: rem(32);
+        width: fit-content;
+    }
+
+    a::after {
+        content: '';
+        display: inline-flex;
+        width: rem(20);
+        height: rem(20);
+        background-image: url(/assets/images/icons/arrow-right.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.ui-btn-select {
+    @include flexCenter;
+    background-color: #fff;
+    width: rem(78);
+    height: rem(48);
+    border: 1px solid #58616a;
+    border-radius: rem(6);
+
+    &.blue {
+        background-color: #256ef4;
+        color: #fff;
+    }
+}
+
+// ui-buttons //
+
+.ui-btn-ico-wrap {
+    position: relative;
+}
+
 .ui-icon-txt {
     @include flexColumn {
         align-items: center;
@@ -21,19 +197,6 @@
         width: 20px;
         height: 20px;
     }
-}
-
-.ui-btn-detail-go {
-    @include flexYCenter;
-    display: inline-flex;
-
-    height: 64px;
-
-    font-size: rem(19);
-    padding: 0 rem(24);
-    background-color: #246beb;
-    border-radius: 8px;
-    color: #fff !important;
 }
 
 .ui-title-wrap {
@@ -99,41 +262,58 @@
         gap: rem(24);
     }
 
-    .ui-card-title {
-        font-size: rem(19);
-        font-weight: 700;
-    }
-    .ui-card-txt {
-        color: #555555;
-        @include ellipsis(2);
-        word-break: keep-all;
-        word-wrap: break-word;
+    &.gap-l {
+        gap: rem(40);
     }
 }
+.ui-card-box-thumb {
+    @include flex {
+        gap: rem(40);
+    }
 
-.ui-btn-detail {
-    @include flexYCenter;
-    gap: rem(4);
-    height: rem(40);
-}
-.ui-btn-more {
-    @include flexYCenter {
-        gap: rem(4);
+    @include mobile {
+        gap: rem(24);
+    }
 
-        i {
-            width: 20px;
-            height: 20px;
+    .text {
+        @include flexColumn {
+            gap: rem(24);
         }
     }
-    &:focus {
-        outline-offset: 0.4rem;
-        outline: 2px solid rgba(36, 107, 235, 0.8);
-        border-radius: 6px;
+
+    .thumb {
+        display: inline-flex;
+        flex-shrink: 0;
+        width: rem(180);
+        height: rem(110);
+        overflow: hidden;
+        border-radius: rem(8);
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @include mobile {
+            width: rem(120);
+            height: rem(74);
+        }
     }
-    &:active {
-        background-color: #cdd7e4;
-        padding: 1px;
-        transition: 0.4s ease-in-out;
+}
+
+.ui-card-title {
+    @include flexYCenter;
+    font-size: rem(19);
+    font-weight: 700;
+}
+.ui-card-txt {
+    color: #555555;
+    @include ellipsis(2);
+    word-break: keep-all;
+    word-wrap: break-word;
+
+    @include mobile {
+        @include ellipsis(3);
     }
 }
 
@@ -164,6 +344,7 @@
     @include flex {
         // gap: rem(24);
     }
+    padding-top: rem(24);
     padding-bottom: rem(40);
 
     .home {
@@ -207,7 +388,8 @@
     }
 }
 
-.ui-snb-warp {
+.ui-snb-wrap {
+    width: rem(296);
 }
 
 .ui-snb-item {
@@ -224,15 +406,13 @@
         }
 
         .ui-snb-checkbox-wrap {
-            max-height: 500px; /* 메뉴의 최대 높이보다 크게 설정 (충분히 크면 됩니다) */
+            max-height: 1000px;
+            /* 메뉴의 최대 높이보다 크게 설정 (충분히 크면 됩니다) */
             // opacity: 1;
             // display: block;
+            display: block;
         }
     }
-
-    // .ui-snb-checkbox-wrap {
-    //     display: none;
-    // }
 
     .snb-btn {
         @include flexYCenter;
@@ -257,13 +437,20 @@
 
 .ui-snb-checkbox-wrap {
     max-height: 0; /* 초기 상태: 높이를 0으로 설정하여 숨김 */
-
+    width: 100%;
     overflow: hidden;
     transition: 0.4s ease-in-out;
+    display: none;
 
     label {
         color: #1d1d1d;
         cursor: pointer;
+    }
+
+    ul {
+        &:not(:first-child) {
+            margin-top: rem(16);
+        }
     }
 }
 
@@ -280,38 +467,55 @@
     }
 }
 
-.ui-chip-box {
+.ui-chip-box-date {
     @include flexBetween {
-        gap: rem(24);
+        gap: rem(8);
     }
     padding-top: rem(24);
     word-break: keep-all;
     word-wrap: break-word;
 
-    input[type='radio'] {
-        display: none;
-    }
-    input[type='radio'] + label {
-        font-size: 15px;
-        // cursor: pointer;
-        border: solid 1px #b1b8be;
-        border-radius: rem(6);
-        padding: rem(0 10);
-        display: inline-block;
-    }
-    input[type='radio']:checked + label {
-        background-color: #ecf2fe;
-        border-color: #256ef4;
-        &::before {
-            content: '';
-            display: inline-flex;
-            background-image: url(/assets/images/icons/element.svg);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: rem(12);
-            height: rem(12);
-            margin-right: 5px;
+    li {
+        position: relative;
+
+        input[type='radio'] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+
+            & + label {
+                font-size: 15px;
+                // cursor: pointer;
+                border: solid 1px #b1b8be;
+                border-radius: rem(6);
+                padding: rem(0 10);
+                display: inline-block;
+            }
+
+            &:focus-visible {
+                & + label {
+                    outline: 2px dashed skyblue;
+                }
+            }
+
+            &:checked {
+                & + label {
+                    background-color: #ecf2fe;
+                    border-color: #256ef4;
+
+                    &::before {
+                        content: '';
+                        display: inline-flex;
+                        background-image: url(/assets/images/icons/element.svg);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: rem(12);
+                        height: rem(12);
+                        margin-right: 5px;
+                    }
+                }
+            }
         }
     }
 }
@@ -327,17 +531,316 @@
     }
 }
 
-.ui-btn-snb-reset {
-    border: 1px solid #58616a;
-    border-radius: rem(6);
-    padding: rem(0 16);
-    height: rem(56);
+.ui-date-picker-box {
+    @include flex {
+        gap: rem(10);
+    }
+    width: 100%;
+
+    // li {
+    //     height: rem(40);
+    // }
+
+    .date-item {
+        flex: 1;
+        min-width: 0;
+        @include flexColumn {
+            gap: rem(12);
+        }
+        label {
+            font-size: rem(15);
+            color: #464c53;
+        }
+    }
+
+    .snb-datepicker {
+        height: rem(40);
+        padding: rem(0 16);
+        border: 1px solid #717171;
+        border-radius: rem(6);
+        font-size: rem(15);
+    }
+    .date-hyphen {
+        margin-top: rem(45);
+    }
 }
-.ui-btn-snb-submit {
-    border: 1px solid #58616a;
+
+.ui-filter-chip-wrap {
+    @include flexYCenter {
+        gap: rem(16);
+    }
+    border-radius: rem(8);
+    padding: rem(16 24);
+
+    .num {
+        color: #1d56bc;
+    }
+}
+
+.ui-filter-chip-box {
+    @include flexYCenter {
+        gap: rem(8);
+    }
+}
+
+.ui-chip-box {
+    @include flex {
+        gap: rem(8);
+    }
+}
+
+.ui-chip-has {
+    @include flexYCenter {
+        gap: rem(2);
+    }
+    font-size: rem(15);
+    height: rem(32);
+    padding: rem(0 12);
+    border: 1px solid #c6c6c6;
+    border-radius: rem(100);
+    background-color: #fff;
+
+    &:hover {
+        background-color: #edf1f5;
+    }
+    &:active {
+        background-color: #cdd7e4;
+    }
+}
+
+.ui-card-info {
+    @include flexYCenter {
+        gap: rem(16);
+    }
+
+    .date {
+        color: #555555;
+    }
+}
+
+.ui-list-card {
+    @include flexColumn {
+        gap: rem(24);
+    }
+
+    padding: rem(32 0);
+    border-bottom: 1px solid #c6c6c6;
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    .btns {
+        @include flexBetween {
+            gap: 16px;
+        }
+
+        &.right {
+            justify-content: flex-end;
+        }
+        .btn-group {
+            @include flexYCenter {
+                gap: rem(16);
+            }
+        }
+
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}
+
+.ui-location {
+    color: #555555;
+
+    &,
+    & > li {
+        @include flexYCenter;
+    }
+
+    & > li:not(:last-child) {
+        &::after {
+            @include mask('icons/arrow-right.svg');
+            content: '';
+            width: 16px;
+            height: 16px;
+            margin: 0 4px;
+            background-color: currentColor;
+        }
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.ui-sub-title {
+    font-size: rem(19);
+    font-weight: 700;
+}
+.ui-login-card-title {
+    font-size: rem(24);
+    font-weight: 700;
+    margin-top: rem(24);
+}
+
+.ui-cont-head-wrap {
+    @include flexColumn {
+        gap: rem(24);
+    }
+}
+
+.ui-head-txt {
+    font-size: rem(19);
+    color: #555555;
+}
+.ui-cont-title-wrap {
+    @include flexColumn {
+        gap: rem(16);
+    }
+}
+
+.ui-toggle-swich {
+    @include flexYCenter {
+        gap: rem(8);
+    }
+
+    .icons-ico_info {
+        @include flexYCenter;
+        width: rem(20);
+        height: rem(20);
+        margin-left: rem(4);
+    }
+}
+
+.ui-login-helper-box {
+    padding: rem(24);
+    background-color: #edf1f5;
+    border: 1px solid #e4e4e4;
     border-radius: rem(6);
-    background-color: #256ef4;
-    color: #fff;
-    padding: rem(0 16);
-    height: rem(56);
+
+    @include mobile {
+        padding: rem(24 16);
+    }
+
+    .helper-tit {
+        @include flexYCenter;
+        color: #003675;
+        font-weight: 700;
+
+        &::before {
+            content: '';
+            width: rem(20);
+            height: rem(20);
+            margin-right: rem(8);
+            background-image: url(/assets/images/icons/ico_helper_info.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    ul {
+        margin-top: rem(20);
+        margin-left: rem(24);
+
+        li {
+            &:not(:first-child) {
+                margin-top: rem(8);
+            }
+        }
+    }
+    .ui-card-txt::before {
+        content: '•';
+    }
+}
+
+.ui-login-another {
+    @include flexYCenter {
+        gap: rem(16);
+    }
+
+    p {
+        font-weight: 700;
+    }
+
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* 모달 배경 */
+.modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+}
+
+/* 모달 내용 */
+.modal-content {
+    @include flexColumn;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: rem(24);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: rem(560);
+    max-width: 90%;
+
+    @include mobile {
+        padding: rem(20);
+    }
+}
+
+/* 닫기 버튼 */
+
+.close-button {
+    @include flexYCenter;
+    margin-left: auto;
+    font-size: rem(24);
+}
+
+.ui-modal-txt-box {
+    @include flexColumn {
+        gap: rem(16);
+    }
+    padding: rem(8 16);
+
+    @include mobile {
+        padding: rem(8);
+    }
+
+    .modal-title-wrap {
+        @include flexColumn {
+            gap: rem(8);
+        }
+    }
+    .modal-sub-tit {
+        font-size: rem(15);
+        font-weight: 700;
+    }
+    .modal-tit {
+        font-size: rem(24);
+        font-weight: 700;
+
+        @include mobile {
+            font-size: rem(22);
+        }
+    }
+}
+.select-btn-box {
+    @include flexYCenter {
+        justify-content: end;
+        gap: rem(8);
+    }
+    padding: rem(16);
 }
