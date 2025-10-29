@@ -25,8 +25,9 @@
     }
 }
 .ui-btn-detail {
-    @include flexYCenter;
-    gap: rem(4);
+    @include flexYCenter {
+        gap: rem(4);
+    }
     height: rem(40);
 }
 .ui-btn-more {
@@ -771,7 +772,7 @@
 }
 
 /* 모달 배경 */
-.modal-background {
+.ui-modal-background {
     display: none;
     position: fixed;
     top: 0;
@@ -780,67 +781,532 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 1000;
-}
 
-/* 모달 내용 */
-.modal-content {
-    @include flexColumn;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: rem(24);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: rem(560);
-    max-width: 90%;
-
-    @include mobile {
-        padding: rem(20);
-    }
-}
-
-/* 닫기 버튼 */
-
-.close-button {
-    @include flexYCenter;
-    margin-left: auto;
-    font-size: rem(24);
-}
-
-.ui-modal-txt-box {
-    @include flexColumn {
-        gap: rem(16);
-    }
-    padding: rem(8 16);
-
-    @include mobile {
-        padding: rem(8);
-    }
-
-    .modal-title-wrap {
-        @include flexColumn {
-            gap: rem(8);
-        }
-    }
-    .modal-sub-tit {
-        font-size: rem(15);
-        font-weight: 700;
-    }
-    .modal-tit {
-        font-size: rem(24);
-        font-weight: 700;
+    /* 모달 내용 */
+    .modal-content {
+        @include flexColumn;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: rem(24);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: rem(560);
+        max-width: 90%;
 
         @include mobile {
-            font-size: rem(22);
+            padding: rem(20);
+        }
+    }
+
+    /* 닫기 버튼 */
+
+    .close-button {
+        @include flexYCenter;
+        margin-left: auto;
+        font-size: rem(24);
+    }
+
+    .ui-modal-txt-box {
+        @include flexColumn {
+            gap: rem(16);
+        }
+        padding: rem(8 16);
+
+        @include mobile {
+            padding: rem(8);
+        }
+
+        .modal-title-wrap {
+            @include flexColumn {
+                gap: rem(8);
+            }
+        }
+        .modal-sub-tit {
+            font-size: rem(15);
+            font-weight: 700;
+        }
+        .modal-tit {
+            font-size: rem(24);
+            font-weight: 700;
+
+            @include mobile {
+                font-size: rem(22);
+            }
         }
     }
 }
-.select-btn-box {
+
+.ui-btn-box {
     @include flexYCenter {
         justify-content: end;
         gap: rem(8);
     }
     padding: rem(16);
+}
+
+// 공통
+
+.ui-common-page {
+    @include flexCenter {
+        flex-direction: column;
+        gap: rem(100);
+    }
+    width: 100%;
+    height: 100vh;
+
+    .btn-list {
+        @include flexColumn {
+            gap: rem(100);
+        }
+        div {
+            @include flexYCenter {
+                gap: rem(40);
+            }
+        }
+    }
+    // 버튼
+    .ui-btn {
+        @include flexCenter;
+        height: rem(48);
+        padding: rem(0 20);
+        background-color: #256ef4;
+        border-radius: rem(6);
+        font-size: rem(19);
+        color: #fff;
+
+        &.secondary {
+            background-color: #ecf2fe;
+            border: 1px solid #256ef4;
+            color: #0b50d0;
+
+            &:hover {
+                background-color: #0b50d0;
+                color: #fff;
+            }
+        }
+
+        &.tertiary {
+            background-color: #fff;
+            border: 1px solid #58616a;
+            color: #1e2124;
+            &:hover {
+                background-color: #0b50d0;
+                color: #fff;
+            }
+        }
+
+        &.xl {
+            height: rem(64);
+            padding: rem(0 24);
+            border-radius: rem(8);
+        }
+        &.l {
+            height: rem(56);
+            padding: rem(0 20);
+            border-radius: rem(8);
+        }
+        &.sm {
+            height: rem(40);
+            padding: rem(0 12);
+            border-radius: rem(6);
+        }
+
+        &.btn-hover {
+            background-color: #0b50d0;
+        }
+        &:hover {
+            background-color: #0b50d0;
+        }
+
+        &.btn-active {
+            background-color: #083891;
+        }
+        &:active {
+            background-color: #083891;
+        }
+
+        &.btn-disabled {
+            background-color: #cdd1d5;
+            color: #6d7882;
+            border: none;
+        }
+    }
+    // 버튼 //
+
+    // 링크버튼
+    .ui-btn-link {
+        @include flexYCenter {
+            gap: rem(4);
+        }
+
+        padding: rem(0 2);
+
+        i {
+            width: rem(20);
+            height: rem(20);
+        }
+
+        &.large {
+            font-size: rem(19);
+            i {
+                width: rem(24);
+                height: rem(24);
+            }
+        }
+        &.sm {
+            font-size: rem(15);
+            gap: rem(2);
+            i {
+                width: rem(16);
+                height: rem(16);
+            }
+        }
+
+        &.link-hover {
+            color: #0b50d0;
+            i {
+                background-color: #0b50d0 !important;
+            }
+        }
+        &:hover {
+            color: #0b50d0;
+            i {
+                background-color: #0b50d0 !important;
+            }
+        }
+
+        &.link-active {
+            color: #083891;
+            i {
+                background-color: #083891 !important;
+            }
+        }
+        &:active {
+            color: #083891;
+            i {
+                background-color: #083891 !important;
+            }
+        }
+
+        &.link-disabled {
+            color: #8a949e;
+            i {
+                background-color: #8a949e !important;
+            }
+        }
+
+        &.link-visited {
+            color: #5917b8;
+            i {
+                background-color: #5917b8 !important;
+            }
+        }
+        // &:visited {
+        //     color: #5917b8;
+        //     i {
+        //         background-color: #5917b8 !important;
+        //     }
+        // }
+    }
+    // 링크버튼 //
+
+    // radio
+    .input-list {
+        width: 1200px;
+        @include flexColumn {
+            align-items: center;
+            gap: rem(50);
+        }
+    }
+    .input-box {
+        @include flex {
+            gap: rem(20);
+        }
+    }
+
+    .ui-form-radio {
+        input[type='radio'] {
+            @include hidden-x;
+
+            &:checked + label .radio-select {
+                border: 1.6px solid #256ef4;
+            }
+
+            &:checked + label .radio-select::after {
+                transform: translate(-50%, -50%) scale(0.6);
+            }
+
+            &:disabled {
+                // Label 및 텍스트의 스타일
+                + label {
+                    cursor: not-allowed;
+                    color: #8a949e;
+                }
+
+                // 비활성화
+                + label .radio-select {
+                    border: 1px solid #8a949e;
+                    background-color: #cdd1d5;
+                }
+
+                // 비활성화 & 체크된 상태
+                + label .radio-select::after {
+                    background-color: #8a949e;
+                }
+            }
+            &:focus + label .radio-select {
+                outline: 2px dashed skyblue;
+                transition: none;
+            }
+        }
+
+        label {
+            @include flexYCenter;
+        }
+
+        .radio-select {
+            @include flexYCenter;
+            position: relative;
+            width: rem(20);
+            height: rem(20);
+            padding: rem(2);
+            border: 1px solid #58616a;
+            border-radius: 100%;
+            margin-right: 8px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .radio-select::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: rem(20);
+            height: rem(20);
+            border-radius: 50%;
+            background-color: #256ef4;
+            transform: translate(-50%, -50%) scale(0);
+            transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+            transform-origin: center;
+        }
+
+        &.large {
+            font-size: rem(19);
+
+            .radio-select {
+                width: rem(24);
+                height: rem(24);
+            }
+            .radio-select::after {
+                width: rem(24);
+                height: rem(24);
+            }
+        }
+    }
+    // radio //
+
+    // check-box
+    .ui-form-check {
+        input[type='checkbox'] {
+            @include hidden-x;
+
+            &:checked + label .check-select {
+                border-color: #256ef4;
+                background-color: #256ef4;
+                background-image: url(/assets/images/icons/ico_check_primary_checked.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 80%;
+            }
+
+            &:disabled {
+                // Label 및 텍스트의 스타일
+                + label {
+                    cursor: not-allowed;
+                    color: #8a949e;
+                }
+
+                // 비활성화
+                + label .check-select {
+                    border-color: #c6c6c6;
+                    background-color: #e4e4e4;
+                }
+
+                // 비활성화 & 체크된 상태
+                &:checked + label .check-select {
+                    border-color: #c6c6c6;
+                    background-color: #e4e4e4;
+                    background-image: url(/assets/images/icons/ico_check_primary_disabled.svg);
+                }
+            }
+            &:focus + label .check-select {
+                outline: 2px dashed skyblue;
+                transition: none;
+            }
+        }
+        label {
+            @include flexYCenter;
+        }
+        .check-select {
+            width: rem(16);
+            height: rem(16);
+            border: 1px solid #58616a;
+            border-radius: rem(4);
+            margin-right: rem(8);
+            background-color: #fff;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+        }
+
+        &.large {
+            label {
+                font-size: rem(19);
+            }
+            .check-select {
+                width: rem(20);
+                height: rem(20);
+            }
+        }
+    }
+    .ui-form-minus {
+        input[type='checkbox'] {
+            @include hidden-x;
+
+            &:checked + label .check-select {
+                border-color: #256ef4;
+                background-color: #256ef4;
+                background-image: url(/assets/images/icons/minus.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 80%;
+            }
+
+            &:disabled {
+                // Label 및 텍스트의 스타일
+                + label {
+                    cursor: not-allowed;
+                    color: #8a949e;
+                }
+
+                // 비활성화
+                + label .check-select {
+                    border-color: #c6c6c6;
+                    background-color: #e4e4e4;
+                }
+
+                // 비활성화 & 체크된 상태
+                &:checked + label .check-select {
+                    border-color: #c6c6c6;
+                    background-color: #e4e4e4;
+                    background-image: url(/assets/images/icons/minus-disabled.svg);
+                }
+            }
+            &:focus + label .check-select {
+                outline: 2px dashed skyblue;
+                transition: none;
+            }
+        }
+        label {
+            @include flexYCenter;
+        }
+        .check-select {
+            width: rem(16);
+            height: rem(16);
+            border: 1px solid #58616a;
+            border-radius: rem(4);
+            margin-right: rem(8);
+            background-color: #fff;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+        }
+        &.large {
+            label {
+                font-size: rem(19);
+            }
+            .check-select {
+                width: rem(20);
+                height: rem(20);
+            }
+        }
+    }
+    // check-box //
+
+    // select-box
+
+    .ui-select-box {
+        @include flexColumn {
+            gap: rem(8);
+        }
+        width: 100%;
+
+        .ui-select-tit {
+            font-size: rem(15);
+        }
+        .ui-select-conts {
+            @include flex;
+            width: 100%;
+            cursor: pointer;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #58616a;
+            border-radius: rem(6);
+            background-image: url('/assets/images/icons/arrow-down.svg');
+            background-repeat: no-repeat;
+            background-position: calc(100% - 15px) center; /* 오른쪽에서 15px, 세로 중앙 */
+            background-size: rem(24); /* 아이콘 크기 조절 */
+            background-color: transparent;
+
+            &.selected {
+                .ui-select {
+                    color: #464c53;
+                }
+            }
+            &.error {
+                border: 2px solid #de3412;
+            }
+            &.disabled {
+                border: 2px solid #b1b8be;
+                background-color: #cdd1d5;
+                .ui-select {
+                    color: #6d7882;
+                }
+            }
+        }
+        .ui-select {
+            @include flexYCenter;
+            appearance: none;
+            border: none;
+            width: 100%;
+            height: rem(48);
+            font-size: rem(17);
+            color: #8a949e;
+            background-color: transparent;
+            padding: rem(0 48 0 16);
+            cursor: pointer;
+
+            option:disabled {
+                background-color: #cdd1d5;
+                color: #6d7882;
+                cursor: not-allowed;
+            }
+
+            &.focused {
+                outline: 2px dashed skyblue;
+            }
+        }
+
+        &.large {
+            .ui-select {
+                font-size: rem(19);
+                height: rem(56);
+            }
+        }
+        &.sm {
+            .ui-select {
+                font-size: rem(15);
+                height: rem(40);
+            }
+        }
+    }
+
+    // select-box //
 }
