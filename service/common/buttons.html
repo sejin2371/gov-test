@@ -7,99 +7,125 @@
         <link rel="stylesheet" href="/assets/css/style.css" />
     </head>
     <body>
-        <div class="ui-common-page">
-            <div class="btn-list">
-                <div>
-                    <button class="ui-btn">버튼 : primary</button>
-                    <button class="ui-btn secondary">버튼 : secondary</button>
-                    <button class="ui-btn tertiary">버튼 : tertiary</button>
-                </div>
-                <div>
-                    <button class="ui-btn xl">버튼 X-Large</button>
-                    <button class="ui-btn l">버튼 X-Large</button>
-                    <button class="ui-btn">버튼 Basic</button>
-                    <button class="ui-btn sm">버튼 : Small</button>
-                </div>
-                <div>
-                    <button class="ui-btn">Default</button>
-                    <button class="ui-btn btn-hover">Hover</button>
-                    <button class="ui-btn btn-active">Pressed</button>
-                    <button class="ui-btn btn-disabled">Disabled</button>
-                </div>
-            </div>
-            <div class="btn-list">
-                <div>
-                    <a href="#" class="ui-btn-link large">
-                        <span>이동 Large</span>
-                        <i class="icons-arrow-right"></i>
-                    </a>
-                    <a href="#" class="ui-btn-link">
-                        <span>이동 Basic</span>
-                        <i class="icons-arrow-right"></i>
-                    </a>
-                    <a href="#" class="ui-btn-link sm">
-                        <span>이동 Small</span>
-                        <i class="icons-arrow-right"></i>
-                    </a>
-                </div>
-                <div>
-                    <a href="#" class="ui-btn-link">
-                        <span>이동 Default</span>
-                        <i class="icons-arrow-right"></i>
-                    </a>
-                    <a href="#" class="ui-btn-link link-hover">
-                        <span>이동 Hover</span>
-                        <i class="icons-arrow-right"></i>
-                    </a>
-                    <a href="#" class="ui-btn-link link-active">
-                        <span>이동 active</span>
-                        <i class="icons-arrow-right"></i>
-                    </a>
-                    <a href="#" class="ui-btn-link link-disabled">
-                        <span>이동 Disabled</span>
-                        <i class="icons-arrow-right"></i>
-                    </a>
-                    <a href="#" class="ui-btn-link link-visited">
-                        <span>이동 Visited</span>
-                        <i class="icons-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <div class="login-item">
-                    <button
-                        type="submit"
-                        class="ui-btn xl"
-                        id="open-modal-login-method"
-                    >
-                        모달창
-                    </button>
-                    <div class="ui-modal-background" id="modal">
-                        <!-- 모달 내용 -->
-                        <div class="modal-content">
-                            <div class="modal-close-btn-wrap">
-                                <button class="close-button" id="close-modal">
-                                    <i class="icons-ico_chip_del"></i>
+        <div class="com-page-wrap">
+            <header class="layout-inner">
+                <div class="ui-page-title">Style guide</div>
+            </header>
+            <div class="com-cont-wrap">
+                <div class="com-conts layout-inner">
+                    <div class="btn-list">
+                        <div class="list">
+                            <h2>Button Color</h2>
+                            <div class="item">
+                                <button class="ui-btn">버튼 : primary</button>
+                                <button class="ui-btn secondary">
+                                    버튼 : secondary
+                                </button>
+                                <button class="ui-btn tertiary">
+                                    버튼 : tertiary
                                 </button>
                             </div>
-                            <div class="ui-modal-txt-box">
-                                <div class="modal-title-wrap">
-                                    <div class="modal-sub-tit">
-                                        로그인 방식 저장
-                                    </div>
-                                    <div class="modal-tit">
-                                        다음에도 이 방식으로 로그인하시겠어요?
-                                    </div>
-                                </div>
-                                <div class="modal-txt">
-                                    로그인 방식을 저장한 후 로그인 화면에서
-                                    원하는 로그인 방식으로 언제든지 변경할 수
-                                    있습니다.
-                                </div>
+                        </div>
+                        <div class="list">
+                            <h2>Button Size</h2>
+                            <div class="item">
+                                <button class="ui-btn xl">버튼 X-Large</button>
+                                <button class="ui-btn l">버튼 X-Large</button>
+                                <button class="ui-btn">버튼 Basic</button>
+                                <button class="ui-btn sm">버튼 : Small</button>
                             </div>
-                            <div class="ui-btn-box">
-                                <button class="ui-btn-select">아니요</button>
-                                <button class="ui-btn-select blue">예</button>
+                        </div>
+                        <div class="list">
+                            <h2>Button state</h2>
+                            <div class="item">
+                                <button class="ui-btn">Default</button>
+                                <button class="ui-btn btn-disabled">
+                                    Disabled
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-list">
+                        <div class="list">
+                            <h2>Link size</h2>
+                            <div class="item">
+                                <a href="#" class="ui-btn-link large">
+                                    <span>이동 Large</span>
+                                    <i class="icons-arrow-right"></i>
+                                </a>
+                                <a href="#" class="ui-btn-link">
+                                    <span>이동 Basic</span>
+                                    <i class="icons-arrow-right"></i>
+                                </a>
+                                <a href="#" class="ui-btn-link sm">
+                                    <span>이동 Small</span>
+                                    <i class="icons-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <h2>Link state</h2>
+                            <div class="item">
+                                <a href="#" class="ui-btn-link">
+                                    <span>이동 Default</span>
+                                    <i class="icons-arrow-right"></i>
+                                </a>
+                                <a href="#" class="ui-btn-link link-disabled">
+                                    <span>이동 Disabled</span>
+                                    <i class="icons-arrow-right"></i>
+                                </a>
+                                <a href="#" class="ui-btn-link link-visited">
+                                    <span>이동 Visited</span>
+                                    <i class="icons-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-wrap">
+                        <div class="login-item">
+                            <button
+                                type="submit"
+                                class="ui-btn xl"
+                                id="open-modal-login-method"
+                            >
+                                모달창
+                            </button>
+                            <div class="ui-modal-background" id="modal">
+                                <!-- 모달 내용 -->
+                                <div class="modal-content">
+                                    <div class="modal-close-btn-wrap">
+                                        <button
+                                            class="close-button"
+                                            id="close-modal"
+                                        >
+                                            <i class="icons-ico_chip_del"></i>
+                                        </button>
+                                    </div>
+                                    <div class="ui-modal-txt-box">
+                                        <div class="modal-title-wrap">
+                                            <div class="modal-sub-tit">
+                                                로그인 방식 저장
+                                            </div>
+                                            <div class="modal-tit">
+                                                다음에도 이 방식으로
+                                                로그인하시겠어요?
+                                            </div>
+                                        </div>
+                                        <div class="modal-txt">
+                                            로그인 방식을 저장한 후 로그인
+                                            화면에서 원하는 로그인 방식으로
+                                            언제든지 변경할 수 있습니다.
+                                        </div>
+                                    </div>
+                                    <div class="ui-btn-box">
+                                        <button class="ui-btn-select">
+                                            아니요
+                                        </button>
+                                        <button class="ui-btn-select blue">
+                                            예
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

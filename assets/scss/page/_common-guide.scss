@@ -1,0 +1,104 @@
+@use '../util/' as *;
+
+.com-page-wrap {
+    .com-cont-wrap {
+        padding: rem(64 0);
+        background-color: #f5f6fa;
+    }
+    header {
+        @include flexYCenter;
+        font-size: rem(32);
+        padding: rem(30 0);
+
+        .ui-page-title {
+            @include flexYCenter;
+
+            &::before {
+                content: '';
+                @include flexYCenter;
+                width: 6px;
+                height: 42px;
+                margin-right: 16px;
+                border-radius: 3px;
+                background-color: #0b50d0;
+            }
+        }
+    }
+
+    .com-conts {
+        @include flexColumn {
+            gap: rem(64);
+        }
+        height: 100vh;
+        .cont {
+            padding: rem(24 0 48 0);
+            &:not(:last-child) {
+                border-bottom: 1px solid black;
+            }
+        }
+
+        .index-select {
+            @include flex {
+                flex-direction: column;
+                gap: rem(24);
+            }
+        }
+
+        .common-btn {
+            @include flexColumn {
+            }
+        }
+        .ui-sub-title {
+            @include flexYCenter;
+
+            margin-bottom: rem(16);
+        }
+        dd {
+            @include flexColumn {
+                gap: rem(16);
+            }
+            div {
+                a {
+                    width: 300px;
+                    @include flexCenter;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    padding: rem(10 20);
+                }
+            }
+        }
+        .ui-title-txt {
+            margin-bottom: rem(24);
+        }
+    }
+    .btn-list {
+        @include flexColumn {
+            gap: rem(24);
+        }
+        .list {
+            @include flexColumn {
+                gap: rem(24);
+            }
+        }
+        .item {
+            @include flexYCenter {
+                gap: rem(40);
+            }
+        }
+    }
+    .modal-wrap {
+        margin-top: 30px;
+        margin-left: 150px;
+    }
+
+    .input-list {
+        @include flexColumn {
+            gap: rem(50);
+        }
+    }
+    .input-box {
+        @include flex {
+            gap: rem(20);
+        }
+    }
+}
