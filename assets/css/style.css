@@ -4769,7 +4769,6 @@ legend {
   flex-direction: column;
   justify-content: initial;
   align-items: initial;
-  gap: 4rem;
 }
 .com-page-wrap .com-conts .cont {
   padding: 1.5rem 0rem 3rem 0rem;
@@ -4824,6 +4823,7 @@ legend {
   justify-content: initial;
   align-items: initial;
   gap: 1.5rem;
+  padding: 2rem 0rem;
 }
 .com-page-wrap .btn-list .item {
   display: flex;
@@ -4831,6 +4831,9 @@ legend {
   justify-content: flex-start;
   align-items: center;
   gap: 2.5rem;
+}
+.com-page-wrap .btn-list:not(:last-child) {
+  border-bottom: 1px solid #aaa;
 }
 .com-page-wrap .modal-wrap {
   margin-top: 30px;
@@ -4842,6 +4845,10 @@ legend {
   justify-content: initial;
   align-items: initial;
   gap: 1.5rem;
+}
+.com-page-wrap .list:nth-child(2n) {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #aaa;
 }
 .com-page-wrap .input-list {
   display: flex;

@@ -26,9 +26,7 @@
     }
 
     .com-conts {
-        @include flexColumn {
-            gap: rem(64);
-        }
+        @include flexColumn;
         .cont {
             padding: rem(24 0 48 0);
             &:not(:last-child) {
@@ -74,11 +72,15 @@
         @include flexColumn {
             gap: rem(24);
         }
+        padding: rem(32 0);
 
         .item {
             @include flexYCenter {
                 gap: rem(40);
             }
+        }
+        &:not(:last-child) {
+            border-bottom: 1px solid #aaa;
         }
     }
     .modal-wrap {
@@ -88,6 +90,10 @@
     .list {
         @include flexColumn {
             gap: rem(24);
+        }
+        &:nth-child(2n) {
+            padding-bottom: rem(48);
+            border-bottom: 1px solid #aaa;
         }
     }
 
