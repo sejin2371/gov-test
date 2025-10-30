@@ -29,7 +29,6 @@
         @include flexColumn {
             gap: rem(64);
         }
-        height: 100vh;
         .cont {
             padding: rem(24 0 48 0);
             &:not(:last-child) {
@@ -75,11 +74,7 @@
         @include flexColumn {
             gap: rem(24);
         }
-        .list {
-            @include flexColumn {
-                gap: rem(24);
-            }
-        }
+
         .item {
             @include flexYCenter {
                 gap: rem(40);
@@ -89,6 +84,11 @@
     .modal-wrap {
         margin-top: 30px;
         margin-left: 150px;
+    }
+    .list {
+        @include flexColumn {
+            gap: rem(24);
+        }
     }
 
     .input-list {

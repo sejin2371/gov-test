@@ -4770,7 +4770,6 @@ legend {
   justify-content: initial;
   align-items: initial;
   gap: 4rem;
-  height: 100vh;
 }
 .com-page-wrap .com-conts .cont {
   padding: 1.5rem 0rem 3rem 0rem;
@@ -4826,13 +4825,6 @@ legend {
   align-items: initial;
   gap: 1.5rem;
 }
-.com-page-wrap .btn-list .list {
-  display: flex;
-  flex-direction: column;
-  justify-content: initial;
-  align-items: initial;
-  gap: 1.5rem;
-}
 .com-page-wrap .btn-list .item {
   display: flex;
   flex-direction: row;
@@ -4843,6 +4835,13 @@ legend {
 .com-page-wrap .modal-wrap {
   margin-top: 30px;
   margin-left: 150px;
+}
+.com-page-wrap .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: initial;
+  gap: 1.5rem;
 }
 .com-page-wrap .input-list {
   display: flex;
