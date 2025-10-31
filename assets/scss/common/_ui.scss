@@ -23,6 +23,10 @@
             height: 20px;
         }
     }
+
+    &.column {
+        flex-direction: column;
+    }
 }
 .ui-btn-detail {
     @include flexYCenter {
@@ -190,7 +194,6 @@
     @include flexYCenter {
         gap: rem(8);
     }
-    font-weight: 700;
     padding: rem(4) rem(16) 0;
     height: 100%;
 
@@ -326,11 +329,53 @@
     @include flexCenter;
     display: inline-flex;
     font-size: rem(15);
-    color: #1d56bc;
+    color: #fff;
     height: rem(24);
     padding: 0 rem(8);
-    background-color: #eff5ff;
+    background-color: #256ef4;
     border-radius: rem(4);
+
+    &.large {
+        font-size: rem(17);
+        height: rem(32);
+    }
+
+    &.secondary {
+        background-color: #063a74;
+    }
+    &.tertiary {
+        background-color: #6d7882;
+    }
+    &.point {
+        background-color: #d63d4a;
+    }
+    &.danger {
+        background-color: #de3412;
+    }
+    &.warning {
+        background-color: #ffb114;
+        color: #1e2124;
+    }
+    &.success {
+        background-color: #228738;
+    }
+    &.info {
+        background-color: #0b78cb;
+    }
+}
+.ui-badge-number {
+    @include flexCenter;
+    display: inline-flex;
+    font-size: rem(15);
+    color: #fff;
+    height: rem(20);
+    padding: 0 rem(8);
+    background-color: #256ef4;
+    border-radius: 1000px;
+
+    &.new {
+        background-color: #d63d4a;
+    }
 }
 
 .ui-plus-search {
@@ -849,7 +894,7 @@
 
 // 공통
 
-.com-page-wrap {
+.page-guide-wrap {
     // 버튼
     .ui-btn {
         @include flexCenter;
@@ -1258,6 +1303,259 @@
             }
         }
     }
-
     // select-box //
+
+    // Tag
+    .ui-tag {
+        @include flexCenter {
+            gap: rem(2);
+        }
+        font-size: rem(15);
+        height: rem(32);
+        padding: rem(8 10);
+        border: 1px solid #cdd1d5;
+        border-radius: 1000px;
+        background-color: #fff;
+
+        i {
+            width: rem(16);
+            height: rem(16);
+        }
+
+        &.large {
+            font-size: rem(17);
+            height: rem(40);
+            padding: rem(8 12);
+        }
+        &.sm {
+            font-size: rem(13);
+            height: rem(24);
+            padding: rem(8);
+        }
+        &:hover {
+            background-color: #eef2f7;
+            border: none;
+        }
+        &:active {
+            background-color: #d6e0eb;
+            border: none;
+        }
+    }
+    // Tag //
+    // Chip
+    .ui-chip-single,
+    .ui-chip-multi {
+        @include flexCenter {
+            gap: rem(4);
+        }
+        height: rem(48);
+        padding: rem(0 12);
+        color: #0b50d0;
+        border: 1px solid #256ef4;
+        border-radius: rem(6);
+        background-color: #ecf2fe;
+
+        i {
+            width: rem(16);
+            height: rem(16);
+            background-color: #256ef4 !important;
+        }
+        &.large {
+            font-size: rem(19);
+            height: rem(56);
+            padding: rem(0 16);
+            i {
+                width: rem(20);
+                height: rem(20);
+            }
+        }
+        &.sm {
+            font-size: rem(15);
+            height: rem(40);
+            padding: rem(10);
+            i {
+                width: rem(12);
+                height: rem(12);
+            }
+        }
+    }
+    .ui-chip-single {
+        &:disabled {
+            color: #6d7882;
+            background-color: #cdd1d5;
+            border-color: #cdd1d5;
+            i {
+                display: none;
+            }
+        }
+        &.chip-click-single {
+            color: #1e2124;
+            background-color: #fff;
+            border-color: #b1b8be;
+
+            i {
+                display: none;
+            }
+        }
+    }
+    .ui-chip-multi {
+        &:disabled {
+            color: #6d7882;
+            background-color: #cdd1d5;
+            border-color: #cdd1d5;
+            i {
+                display: none;
+            }
+        }
+        &.chip-click-multi {
+            color: #1e2124;
+            background-color: #fff;
+            border-color: #b1b8be;
+
+            i {
+                background-color: #8a949e !important;
+            }
+        }
+    }
+    // Chip //
+    // toggle-switch
+    .ui-toggle-switch-wrap {
+        @include flexYCenter {
+            gap: rem(8);
+        }
+
+        .ui-toggle-switch-input {
+            @include hidden-x;
+
+            &:checked + .ui-toggle-switch-label {
+                .ui-toggle-box {
+                    .ui-toggle-switch-track {
+                        background-color: #256ef4;
+                    }
+                    .icons-thumb-on {
+                        background-color: #256ef4 !important;
+                    }
+                    .ui-toggle-switch-thumb {
+                        transform: translateX(12px);
+
+                        // 체크된 상태일 때: ON 아이콘 보이기, OFF 아이콘 숨기기
+                        .thumb-ico-off {
+                            opacity: 0; // OFF 아이콘 숨기기
+                        }
+                        .thumb-ico-on {
+                            opacity: 1; // ON 아이콘 보이기
+                        }
+                    }
+                }
+            }
+            &:focus-visible + .ui-toggle-switch-label {
+                outline: 2px dashed skyblue;
+                outline-offset: 1px;
+            }
+            &:disabled + .ui-toggle-switch-label {
+                color: #8a949e;
+                cursor: not-allowed;
+
+                .ui-toggle-box {
+                    .ui-toggle-switch-track {
+                        background-color: #cdd1d5; // 혹시 활성화된 상태에서 disabled가 되더라도 기본 색상으로 돌아오도록
+                    }
+                    .ui-toggle-switch-thumb {
+                        background-color: #8a949e;
+                        i {
+                            background-color: #cdd1d5 !important;
+                        }
+                    }
+                }
+            }
+        }
+        .ui-toggle-switch-label {
+            @include flexYCenter {
+                gap: rem(8);
+            }
+            cursor: pointer;
+        }
+        .ui-toggle-box {
+            position: relative;
+            display: block;
+            width: 32px;
+            height: 20px;
+            padding: rem(2);
+        }
+
+        .ui-toggle-switch-track {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #6d7882;
+            border-radius: 12px;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .ui-toggle-switch-thumb {
+            @include flexCenter;
+
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: rem(16);
+            height: rem(16);
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease-in-out;
+
+            overflow: hidden;
+
+            i {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: rem(8);
+                height: rem(8);
+                transition: opacity 0.2s ease-in-out;
+                background-color: #6d7882 !important;
+            }
+            .thumb-ico-off {
+                opacity: 1;
+            }
+            .thumb-ico-on {
+                opacity: 0;
+            }
+        }
+        &.large {
+            .ui-toggle-box {
+                width: rem(40);
+                height: rem(24);
+                padding: rem(2);
+            }
+            .ui-toggle-switch-thumb {
+                width: rem(20);
+                height: rem(20);
+
+                i {
+                    width: rem(10);
+                    height: rem(10);
+                }
+            }
+            .toggle-txt {
+                font-size: rem(19);
+            }
+            .ui-toggle-switch-input:checked + .ui-toggle-switch-label {
+                .ui-toggle-box {
+                    .ui-toggle-switch-thumb {
+                        transform: translateX(16px);
+                    }
+                }
+            }
+        }
+    }
+    // toggle-switch //
+}
+
+.ui-division-btm {
+    padding-bottom: rem(48);
+    border-bottom: 1px solid #aaa;
 }

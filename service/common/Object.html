@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Object</title>
+        <link rel="stylesheet" href="/assets/css/style.css" />
+    </head>
+    <body>
+        <div class="page-guide-wrap">
+            <header class="layout-inner">
+                <div class="ui-page-title">&#127984; Style guide</div>
+            </header>
+            <div class="com-cont-wrap">
+                <div class="com-conts layout-inner">
+                    <div class="ui-list-item">
+                        <div class="list">
+                            <div class="tit">
+                                <h2>&#128204; Tag Type</h2>
+                                <span
+                                    >&#128161;콘텐츠 내에서 적합한 계층을 가진
+                                    크기로 사용한다.</span
+                                >
+                            </div>
+                            <div class="item">
+                                <button type="button" class="ui-tag large">
+                                    sorting<i class="icons-vector bgi"></i>
+                                </button>
+                                <button type="button" class="ui-tag large">
+                                    #button<i class="icons-vector bgi"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="tit">
+                                <h2>&#128204; Tag Size</h2>
+                                <span
+                                    >&#128161;사용자 과업, 플로우의 중요도에
+                                    따라 버튼 간 위계를 구분하여 사아즈 통일하여
+                                    사용한다.</span
+                                >
+                            </div>
+                            <div class="item">
+                                <button type="button" class="ui-tag large">
+                                    <span>Large</span
+                                    ><i class="icons-vector bgi"></i>
+                                </button>
+                                <button type="button" class="ui-tag">
+                                    <span>Basic</span
+                                    ><i class="icons-vector bgi"></i>
+                                </button>
+                                <button type="button" class="ui-tag sm">
+                                    <span>Small</span
+                                    ><i class="icons-vector bgi"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="tit">
+                                <h2>&#128204; Tag Type</h2>
+                                <span
+                                    >&#128161;사용자의 상호작용 시 컬러가
+                                    변경된다.</span
+                                >
+                            </div>
+                            <div class="item">
+                                <button type="button" class="ui-tag large">
+                                    <span>Tag</span
+                                    ><i class="icons-vector bgi"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-list-item multi-group">
+                        <div class="multi-item">
+                            <div class="list">
+                                <div class="tit">
+                                    <h2>&#128204; Chip_Single Size</h2>
+                                    <span
+                                        >&#128161;콘텐츠 내에서 적합한 계층을
+                                        가진 크기로 사용한다.</span
+                                    >
+                                </div>
+                                <div class="item">
+                                    <button
+                                        type="button"
+                                        class="ui-chip-single large"
+                                    >
+                                        <i class="icons-element"></i>large
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-chip-single"
+                                    >
+                                        <i class="icons-element"></i>Basic
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-chip-single sm"
+                                    >
+                                        <i class="icons-element"></i>Small
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="list">
+                                <div class="tit">
+                                    <h2>&#128204; Chip_Single State</h2>
+                                    <span
+                                        >&#128161;사용자의 상호작용 시 컬러가
+                                        변경된다. (Unchecked 만 JS적용한
+                                        상태)</span
+                                    >
+                                </div>
+                                <div class="item">
+                                    <button
+                                        type="button"
+                                        class="ui-chip-single large"
+                                        id="btn-chip-single"
+                                    >
+                                        <i class="icons-element"></i>Unchecked
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-chip-single large"
+                                    >
+                                        <i class="icons-element"></i>Default
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-chip-single large"
+                                        disabled
+                                    >
+                                        <i class="icons-element"></i>Disabled
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="multi-item">
+                            <div class="list">
+                                <div class="tit">
+                                    <h2>&#128204; Chip_multi Size</h2>
+                                    <span
+                                        >&#128161;콘텐츠 내에서 적합한 계층을
+                                        가진 크기로 사용한다.</span
+                                    >
+                                </div>
+                                <div class="item">
+                                    <button
+                                        type="button"
+                                        class="ui-chip-multi large"
+                                    >
+                                        <i class="icons-element"></i>large
+                                    </button>
+                                    <button type="button" class="ui-chip-multi">
+                                        <i class="icons-element"></i>Basic
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-chip-multi sm"
+                                    >
+                                        <i class="icons-element"></i>Small
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="list">
+                                <div class="tit">
+                                    <h2>&#128204; Chip_multi State</h2>
+                                    <span
+                                        >&#128161;사용자의 상호작용 시 컬러가
+                                        변경된다. (Unchecked 만 JS적용한
+                                        상태)</span
+                                    >
+                                </div>
+                                <div class="item">
+                                    <button
+                                        type="button"
+                                        class="ui-chip-multi large"
+                                        id="btn-chip-multi"
+                                    >
+                                        <i class="icons-element"></i>Unchecked
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-chip-multi large"
+                                    >
+                                        <i class="icons-element"></i>Default
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-chip-multi large"
+                                        disabled
+                                    >
+                                        <i class="icons-element"></i>Disabled
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-list-item multi-group">
+                        <div class="multi-item">
+                            <div class="list">
+                                <div class="tit">
+                                    <h2>&#128204; Badge size</h2>
+                                    <span
+                                        >&#128161;콘텐츠 내에서 적합한 계층을
+                                        가진 크기로 사용한다.</span
+                                    >
+                                </div>
+                                <div class="item">
+                                    <button
+                                        type="button"
+                                        class="ui-badge large"
+                                    >
+                                        Large
+                                    </button>
+                                    <button type="button" class="ui-badge">
+                                        Basic
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="multi-item">
+                            <div class="list">
+                                <div class="tit">
+                                    <h2>&#128204; Badge-number</h2>
+                                    <span
+                                        >&#128161;중요한 정보나 상태 변경사항
+                                        또는 새로운 정보를 강조할때 사용한다.
+                                        [class="new"]</span
+                                    >
+                                </div>
+                                <div class="item">
+                                    <button
+                                        type="button"
+                                        class="ui-badge-number"
+                                    >
+                                        5
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-badge-number"
+                                    >
+                                        +999
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-badge-number new"
+                                    >
+                                        5
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-badge-number new"
+                                    >
+                                        +999
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="multi-item">
+                            <div class="list">
+                                <div class="tit">
+                                    <h2>&#128204; Badge-number</h2>
+                                    <span
+                                        >&#128161;정보의 우선순위 또는 사용처에
+                                        따라 사용한다.</span
+                                    >
+                                </div>
+                                <div class="item">
+                                    <button type="button" class="ui-badge">
+                                        Badge
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-badge secondary"
+                                    >
+                                        Secondary
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-badge tertiary"
+                                    >
+                                        Tertiary
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-badge point"
+                                    >
+                                        Point
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-badge danger"
+                                    >
+                                        Danger
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-badge warning"
+                                    >
+                                        Warning
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="ui-badge success"
+                                    >
+                                        Success
+                                    </button>
+                                    <button type="button" class="ui-badge info">
+                                        Info
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-list-item">
+                        <div class="list">
+                            <div class="tit">
+                                <h2>&#128204; Toggle</h2>
+                                <span
+                                    >&#128161;콘텐츠 내에서 적합한 계층을 가진
+                                    크기로 사용한다. &#127988; 선택/선택 해제
+                                    상태를 보여준다.</span
+                                >
+                            </div>
+                            <div class="item">
+                                <div class="ui-toggle-switch-wrap large">
+                                    <input
+                                        type="checkbox"
+                                        id="toggle-switch-ios-1"
+                                        class="ui-toggle-switch-input"
+                                    />
+                                    <label
+                                        for="toggle-switch-ios-1"
+                                        class="ui-toggle-switch-label"
+                                    >
+                                        <span class="ui-toggle-box">
+                                            <span
+                                                class="ui-toggle-switch-track"
+                                            ></span>
+                                            <span
+                                                class="ui-toggle-switch-thumb"
+                                            >
+                                                <span class="thumb-ico-off">
+                                                    <i
+                                                        class="icons-thumb-off"
+                                                    ></i>
+                                                </span>
+                                                <!-- ON 상태 아이콘 -->
+                                                <span class="thumb-ico-on">
+                                                    <i
+                                                        class="icons-thumb-on"
+                                                    ></i>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="toggle-txt"
+                                            >스위치 Large</span
+                                        >
+                                    </label>
+                                </div>
+                                <div class="ui-toggle-switch-wrap">
+                                    <input
+                                        type="checkbox"
+                                        id="toggle-switch-ios-2"
+                                        class="ui-toggle-switch-input"
+                                    />
+                                    <label
+                                        for="toggle-switch-ios-2"
+                                        class="ui-toggle-switch-label"
+                                    >
+                                        <span class="ui-toggle-box">
+                                            <span
+                                                class="ui-toggle-switch-track"
+                                            ></span>
+                                            <span
+                                                class="ui-toggle-switch-thumb"
+                                            >
+                                                <span class="thumb-ico-off">
+                                                    <i
+                                                        class="icons-thumb-off"
+                                                    ></i>
+                                                </span>
+                                                <!-- ON 상태 아이콘 -->
+                                                <span class="thumb-ico-on">
+                                                    <i
+                                                        class="icons-thumb-on"
+                                                    ></i>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="toggle-txt"
+                                            >스위치 Basic</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="ui-toggle-switch-wrap large">
+                                    <input
+                                        type="checkbox"
+                                        id="toggle-switch-ios-3"
+                                        class="ui-toggle-switch-input"
+                                    />
+                                    <label
+                                        for="toggle-switch-ios-3"
+                                        class="ui-toggle-switch-label"
+                                    >
+                                        <span class="ui-toggle-box">
+                                            <span
+                                                class="ui-toggle-switch-track"
+                                            ></span>
+                                            <span
+                                                class="ui-toggle-switch-thumb"
+                                            >
+                                                <span class="thumb-ico-off">
+                                                    <i
+                                                        class="icons-thumb-off"
+                                                    ></i>
+                                                </span>
+                                                <!-- ON 상태 아이콘 -->
+                                                <span class="thumb-ico-on">
+                                                    <i
+                                                        class="icons-thumb-on"
+                                                    ></i>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="toggle-txt">Default</span>
+                                    </label>
+                                </div>
+                                <div class="ui-toggle-switch-wrap large">
+                                    <input
+                                        type="checkbox"
+                                        id="toggle-switch-ios-4"
+                                        class="ui-toggle-switch-input"
+                                        disabled
+                                    />
+                                    <label
+                                        for="toggle-switch-ios-4"
+                                        class="ui-toggle-switch-label"
+                                    >
+                                        <span class="ui-toggle-box">
+                                            <span
+                                                class="ui-toggle-switch-track"
+                                            ></span>
+                                            <span
+                                                class="ui-toggle-switch-thumb"
+                                            >
+                                                <span class="thumb-ico-off">
+                                                    <i
+                                                        class="icons-thumb-off"
+                                                    ></i>
+                                                </span>
+                                                <!-- ON 상태 아이콘 -->
+                                                <span class="thumb-ico-on">
+                                                    <i
+                                                        class="icons-thumb-on"
+                                                    ></i>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="toggle-txt">Disabled</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // 페이지 로드 후 스크립트 실행
+                const sortingChipButton =
+                    document.getElementById('btn-chip-single');
+
+                if (sortingChipButton) {
+                    // 버튼이 존재하면 이벤트 리스너 추가
+                    sortingChipButton.addEventListener('click', () => {
+                        // 버튼 자체에 'hide-icon' 클래스를 토글합니다.
+                        sortingChipButton.classList.toggle('chip-click-single');
+                    });
+                }
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                // 페이지 로드 후 스크립트 실행
+                const sortingChipButton =
+                    document.getElementById('btn-chip-multi');
+
+                if (sortingChipButton) {
+                    // 버튼이 존재하면 이벤트 리스너 추가
+                    sortingChipButton.addEventListener('click', () => {
+                        // 버튼 자체에 'hide-icon' 클래스를 토글합니다.
+                        sortingChipButton.classList.toggle('chip-click-multi');
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
